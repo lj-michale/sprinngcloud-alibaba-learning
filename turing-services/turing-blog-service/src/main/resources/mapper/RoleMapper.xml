@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.springcloud.turing.biz.dao.mapper.UserRoleMapper">
+
+    <insert id="insertUserRole">
+        insert into blog2.t_user_role(user_id,role_id) values
+        <foreach collection="roleIdList" item="roleId" separator=",">
+            (#{userId},#{roleId})
+        </foreach>
+    </insert>
+
+    <select id="selectRoleIdByUserId" resultType="java.lang.String">
+        SELECT role_id
+        FROM blog2.t_user_role
+        WHERE user_id = #{userId}
+    </select>
+</mapper>
