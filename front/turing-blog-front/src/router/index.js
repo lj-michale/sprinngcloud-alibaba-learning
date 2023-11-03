@@ -1,32 +1,36 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
-// import About from '@/view/about.vue';
-// import NotFound from '@/view/404.vue';
-// import Index from '@/view/web/index.vue'
+import About from '@/view/about.vue';
+import Home from '@/view/web/index.vue'
+import NotFound from '@/view/404.vue';
 
-const router = [
-  // {
-  //   path: '/',
-  //   component: Index,
-  //   meta: {
-  //     title: 'Turing-Bog首页'
-  //   }
-  // },
-  // {
-  //   path: '/about',
-  //   component: About
-  // },
-  // // 将匹配所有内容并将其放在 `$route.params.pathMatch` 下
-  // {
-  //   path: '/:pathMatch(.*)*',
-  //   name: 'NotFound',
-  //   component: NotFound
-  // }
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: About
+  },
+  {
+    path:'/',
+    redirect:'/home'
+  },
+  // 将匹配所有内容并将其放在 `$route.params.pathMatch` 下
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFound
+  },
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
-  routes,
+  history:createWebHashHistory(),
+  routes
 })
+
 
 export default router
