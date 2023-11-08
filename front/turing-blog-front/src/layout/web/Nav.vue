@@ -3,7 +3,6 @@ export default {
   name: 'nav'
 }
 </script>
-
 <template>
   <nav class="app-topnav">
     <div class="container">
