@@ -13,14 +13,14 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About
-  },
-  {
     path: '/admin',
     name: 'admin',
     component: admin,
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: About
   },
   // 将匹配所有内容并将其放在 `$route.params.pathMatch` 下
   {
