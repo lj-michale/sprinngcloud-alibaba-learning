@@ -1,4 +1,5 @@
 import { ElMessage, ElMessageBox } from "element-plus";
+// @ts-ignore
 import CryptoJS from "crypto-js";
 
 /**

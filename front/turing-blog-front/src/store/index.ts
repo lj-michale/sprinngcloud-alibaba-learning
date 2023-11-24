@@ -1,9 +1,11 @@
 import { defineStore } from "pinia";
+// @ts-ignore
 import utils from "@/utils/utils.ts";
 
 export const useStore = defineStore("myStore", {
   // 开启数据持久化
   persist: true,
+
   state: () => {
     return {
       // 路由数据
