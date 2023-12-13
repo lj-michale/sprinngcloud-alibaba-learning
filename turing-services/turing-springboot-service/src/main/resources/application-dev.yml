@@ -14,7 +14,7 @@ spring:
 
 # mybatis-plus:
   mapper-locations: classpath:/mapper/*.xml
-  typeAliasesPackage: com.example.model
+  typeAliasesPackage: com.turing.springboot.dao.model
   global-config:
     db-config:
       id-type: AUTO
