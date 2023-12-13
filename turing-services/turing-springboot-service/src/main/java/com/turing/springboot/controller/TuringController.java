@@ -31,7 +31,7 @@ public class TuringController {
     @GetMapping("/update/timeline")
     @ResponseBody
     public ResultBody updateTimeLine() {
-        log.info(" 查询sys timeline ");
+        log.info("查询sys timeline");
         List<UpdateTimeLineVo> updateTimeLineVos = updateTimeLineServer.getUpdateTimeLines();
 
         return ResultBody.success(updateTimeLineVos);
