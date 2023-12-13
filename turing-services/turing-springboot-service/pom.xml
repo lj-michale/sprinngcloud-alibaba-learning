@@ -17,6 +17,11 @@
     <dependencies>
         <dependency>
             <groupId>com.turing</groupId>
+            <artifactId>turing-web-spring-boot-starter</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.turing</groupId>
             <artifactId>turing-common-spring-boot-starter</artifactId>
             <version>${project.version}</version>
         </dependency>
