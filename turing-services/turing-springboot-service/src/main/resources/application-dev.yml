@@ -1,0 +1,38 @@
+
+# 配置服务端口
+server:
+  port: 8089
+
+#配置连接数据库
+spring:
+  datasource:
+    username: root
+    password: Turing@2022
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bigdata?serverTimezone=Asia/Shanghai&characterEncoding=utf8&allowMultiQueries=true
+
+
+# mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  typeAliasesPackage: com.example.model
+  global-config:
+    db-config:
+      id-type: AUTO
+      db-column-underline: true
+      refresh-mapper: true
+  configuration:
+    # 自动驼峰命名
+    map-underscore-to-camel-case: true
+    # 查询结果中包含空值的列，在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 开启 sql 日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# mybatis-plus日志查询开启
+logging:
+  level:
+    com.example.mapper: debug
+
+
+
+
