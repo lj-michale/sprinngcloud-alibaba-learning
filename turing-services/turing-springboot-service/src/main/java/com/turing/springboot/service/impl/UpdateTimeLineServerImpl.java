@@ -1,9 +1,9 @@
 package com.turing.springboot.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.turing.springboot.dao.model.UpdateTimeLine;
-import com.turing.springboot.entity.UpdateTimeLineVo;
-import com.turing.springboot.mapper.UpdateTimeLineMapper;
+import com.turing.springboot.dao.entity.UpdateTimeLine;
+import com.turing.springboot.dao.entity.UpdateTimeLineVo;
+import com.turing.springboot.dao.mapper.UpdateTimeLineMapper;
 import com.turing.springboot.service.UpdateTimeLineServer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

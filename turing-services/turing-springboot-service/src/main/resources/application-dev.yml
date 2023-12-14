@@ -9,12 +9,28 @@ spring:
     username: root
     password: Turing@2022
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/bigdata?serverTimezone=Asia/Shanghai&characterEncoding=utf8&allowMultiQueries=true
-
+    url: jdbc:mysql://localhost:3306/blog2?serverTimezone=Asia/Shanghai&characterEncoding=utf8&allowMultiQueries=true
+  # redis配置
+  redis:
+    host: 192.168.43.102
+    port: 6379
+    password: Turing@2022
+    timeout: 10s
+    lettuce:
+      pool:
+        max-active: 150
+        max-wait: 5000ms
+        max-idle: 100
+        min-idle: 50
+  # config of email: from email
+  mail:
+    host: smtp.163.com
+    username: dataops_tony2016@163.com
+    password: JFCBGJYAYALXLECY
 
 # mybatis-plus:
   mapper-locations: classpath:/mapper/*.xml
-  typeAliasesPackage: com.turing.springboot.dao.model
+  typeAliasesPackage: com.turing.springboot.dao.entity
   global-config:
     db-config:
       id-type: AUTO
@@ -31,8 +47,22 @@ spring:
 # mybatis-plus日志查询开启
 logging:
   level:
-    com.turing.springboot.mapper: debug
+    com.turing.springboot.dao.mapper: debug
 
-
+# config of sa-token
+sa-token:
+  token-name: Authorization
+  token-prefix: Bearer
+  timeout: 1800
+  activity-timeout: -1
+  auto-renew: false
+  is-concurrent: true
+  token-style: uuid
+  is-share: false
+  max-login-count: 20
+  is-read-cookie: false
+  is-read-body: false
+  is-read-header: true
+  is-log: false
 
 

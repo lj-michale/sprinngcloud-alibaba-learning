@@ -1,12 +1,18 @@
-package com.turing.springboot.mapper;
+package com.turing.springboot.dao.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import com.turing.springboot.dao.model.UpdateTimeLine;
+import com.turing.springboot.dao.entity.UpdateTimeLine;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * @descri:
+ *
+ * @author: lj.michale
+ * @date: 2023/12/14 14:13
+ */
 @Repository
 public interface UpdateTimeLineMapper extends BaseMapper<UpdateTimeLine> {
 

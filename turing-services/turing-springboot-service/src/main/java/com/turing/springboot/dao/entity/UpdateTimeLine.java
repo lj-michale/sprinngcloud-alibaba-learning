@@ -1,4 +1,4 @@
-package com.turing.springboot.dao.model;
+package com.turing.springboot.dao.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

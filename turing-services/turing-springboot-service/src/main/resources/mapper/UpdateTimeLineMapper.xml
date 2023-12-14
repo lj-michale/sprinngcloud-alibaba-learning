@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.turing.springboot.mapper.UpdateTimeLineMapper" >
+<mapper namespace="com.turing.springboot.dao.mapper.UpdateTimeLineMapper" >
 
-    <resultMap id="BaseResultMap" type="com.turing.springboot.dao.model.UpdateTimeLine" >
-        <id column="id" property="id" jdbcType="VARCHAR" />
-        <result column="author" property="author" jdbcType="VARCHAR" />
-        <result column="action" property="action" jdbcType="VARCHAR" />
-        <result column="context" property="context" jdbcType="VARCHAR" />
-        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-        <result column="create_by" property="context" jdbcType="VARCHAR" />
-    </resultMap>
-
-    <select id="getUpdateTimeLines"  resultType="com.turing.springboot.dao.model.UpdateTimeLine">
-        select
-        r.id,
-        r.author,
-        r.action,
-        r.context,
-        r.create_time,
-        r.create_by
+    <select id="getUpdateTimeLines"  resultType="com.turing.springboot.dao.entity.UpdateTimeLine">
+        select r.id,
+               r.author,
+               r.action,
+               r.context,
+               r.create_time,
+               r.create_by
         from bigdata.update_time_line r
     </select>
 

@@ -4,6 +4,8 @@ package org.springcloud.turing.biz.controller.user;
 //import io.swagger.annotations.ApiOperation;
 import cn.dev33.satoken.annotation.SaCheckLogin;
 import cn.dev33.satoken.stp.StpUtil;
+import com.alibaba.fastjson2.JSON;
+import io.lettuce.core.dynamic.annotation.Param;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springcloud.turing.biz.dto.req.CodeDTO;
@@ -44,6 +46,7 @@ public class UserController {
     @ILog
     @PostMapping("/api/blog-server/user/login")
     public Result<String> login(@RequestBody UserLoginReqDTO userLoginReqDTO) {
+        log.info("传入参数userLoginReqDTO:{}", JSON.toJSONString(userLoginReqDTO));
         return Results.success(userService.login(userLoginReqDTO));
     }
 

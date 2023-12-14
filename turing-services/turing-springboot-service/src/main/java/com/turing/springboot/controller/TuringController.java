@@ -1,6 +1,6 @@
 package com.turing.springboot.controller;
 
-import com.turing.springboot.entity.UpdateTimeLineVo;
+import com.turing.springboot.dao.entity.UpdateTimeLineVo;
 import com.turing.springboot.service.UpdateTimeLineServer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -34,6 +34,7 @@ public class TuringController {
         log.info("查询sys timeline");
         List<UpdateTimeLineVo> updateTimeLineVos = updateTimeLineServer.getUpdateTimeLines();
 
+//        log.info("系统日志更新信息:{}", JSON.parse(updateTimeLineVos.toString()));
         return ResultBody.success(updateTimeLineVos);
     }
 

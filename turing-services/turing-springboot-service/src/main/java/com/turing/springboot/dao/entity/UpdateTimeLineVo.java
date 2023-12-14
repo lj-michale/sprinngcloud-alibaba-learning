@@ -1,4 +1,4 @@
-package com.turing.springboot.entity;
+package com.turing.springboot.dao.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
