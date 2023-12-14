@@ -1,6 +1,5 @@
 package com.turing.springboot.service.user;
 
-import com.turing.springboot.dto.req.CodeDTO;
 import com.turing.springboot.dto.req.UserDeletionReqDTO;
 import com.turing.springboot.dto.req.UserLoginReqDTO;
 import com.turing.springboot.dto.req.UserRegisterReqDTO;
@@ -10,7 +9,7 @@ import com.turing.springboot.dto.resp.UserRegisterRespDTO;
 public interface UserService {
 
     /**
-     * 用户登录接口
+     * 用户登录
      *
      * @param requestParam 用户登录入参
      * @return 用户登录返回结果

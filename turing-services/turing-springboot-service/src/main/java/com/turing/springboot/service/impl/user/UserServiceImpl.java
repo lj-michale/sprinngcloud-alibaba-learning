@@ -61,7 +61,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
                 .eq(UserDO::getPassword, SecurityUtils.sha256Encrypt(requestParam.getPassword())));
         log.info("注册用户信息查询:{}", JSON.toJSONString(user));
         Assert.notNull(user, "用户不存在或密码错误");
-        StpUtil.login(10001);
+        StpUtil.checkDisable(user.getId());
+        StpUtil.login(user.getId());
+
         return StpUtil.getTokenValue();
     }
 
