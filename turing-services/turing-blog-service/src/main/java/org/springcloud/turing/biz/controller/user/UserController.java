@@ -42,7 +42,6 @@ public class UserController {
      * @param userLoginReqDTO 登录参数
      * @return {@link String} Token
      */
-//    @ApiOperation(value = "用户登录")
     @ILog
     @PostMapping("/api/blog-server/user/login")
     public Result<String> login(@RequestBody UserLoginReqDTO userLoginReqDTO) {
@@ -54,7 +53,6 @@ public class UserController {
      * 用户退出
      */
     @SaCheckLogin
-//    @ApiOperation(value = "用户退出")
     @GetMapping("/logout")
     public Result<?> logout() {
         StpUtil.logout();

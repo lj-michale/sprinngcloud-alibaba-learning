@@ -52,7 +52,7 @@ public interface UserService {
      * @param requestParam 用户注册入参
      * @return 用户注册返回结果
      */
-    UserRegisterRespDTO register(UserRegisterReqDTO requestParam);
+    Boolean register(UserRegisterReqDTO requestParam);
 
 
     /**

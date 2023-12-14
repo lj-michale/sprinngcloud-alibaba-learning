@@ -3,7 +3,9 @@ package com.turing.springboot.controller.user;
 import cn.dev33.satoken.annotation.SaCheckLogin;
 import cn.dev33.satoken.stp.StpUtil;
 import com.turing.springboot.dto.req.UserLoginReqDTO;
+import com.turing.springboot.dto.req.UserRegisterReqDTO;
 import com.turing.springboot.dto.resp.UserLoginRespDTO;
+import com.turing.springboot.dto.resp.UserRegisterRespDTO;
 import com.turing.springboot.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -49,7 +51,7 @@ public class UserController {
     }
 
     /**
-     * 通过 Token 检查用户是否登录
+     * 通过Token检查用户是否登录
      */
     @ILog
     @GetMapping("/check-login")
@@ -58,5 +60,17 @@ public class UserController {
 
         return Results.success(result);
     }
+
+    /**
+     * 用户注册
+     */
+    @ILog
+    @GetMapping("/register")
+    public Result<Boolean> register(@RequestParam("userRegisterParam") UserRegisterReqDTO userRegisterParam) {
+        Boolean isRegister = userService.register(userRegisterParam);
+
+        return Results.success(isRegister);
+    }
+
 
 }

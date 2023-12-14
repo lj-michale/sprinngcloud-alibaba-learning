@@ -6,31 +6,23 @@ import cn.hutool.core.lang.Assert;
 import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.turing.springboot.common.enums.LoginTypeEnum;
 import com.turing.springboot.common.urils.SecurityUtils;
 import com.turing.springboot.dao.entity.UserDO;
 import com.turing.springboot.dao.mapper.UserMapper;
-import com.turing.springboot.dto.req.CodeDTO;
 import com.turing.springboot.dto.req.UserDeletionReqDTO;
 import com.turing.springboot.dto.req.UserLoginReqDTO;
 import com.turing.springboot.dto.req.UserRegisterReqDTO;
-import com.turing.springboot.dto.resp.MailDTO;
 import com.turing.springboot.dto.resp.UserLoginRespDTO;
 import com.turing.springboot.dto.resp.UserRegisterRespDTO;
-import com.turing.springboot.mq.event.SendMailAuthResultEvent;
-
 import com.turing.springboot.service.RedisService;
 import com.turing.springboot.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.concurrent.TimeUnit;
 
-import static com.turing.springboot.common.constant.CommonConstant.CAPTCHA;
 import static com.turing.springboot.common.constant.RedisConstant.CODE_EXPIRE_TIME;
 import static com.turing.springboot.common.constant.RedisConstant.CODE_KEY;
 import static com.turing.springboot.common.urils.CommonUtils.checkEmail;
@@ -52,23 +44,24 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
     @Autowired
     private RedisService redisService;
 
-
     @Override
     public String login(UserLoginReqDTO requestParam) {
         UserDO user = userMapper.selectOne(new LambdaQueryWrapper<UserDO>()
                 .select(UserDO::getId)
-                .eq(UserDO::getUsername, requestParam.getUsernameOrMailOrPhone())
+                .eq(UserDO::getUsername, requestParam.getUsername())
                 .eq(UserDO::getPassword, SecurityUtils.sha256Encrypt(requestParam.getPassword())));
         log.info("注册用户信息查询:{}", JSON.toJSONString(user));
         Assert.notNull(user, "用户不存在或密码错误");
         StpUtil.checkDisable(user.getId());
         StpUtil.login(user.getId());
 
+        log.info("用户登录Token：{}", StpUtil.getTokenValue());
         return StpUtil.getTokenValue();
     }
 
     @Override
     public UserLoginRespDTO checkLogin(String accessToken) {
+
         return null;
     }
 
@@ -92,7 +85,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
     }
 
     @Override
-    public UserRegisterRespDTO register(UserRegisterReqDTO requestParam) {
+    public Boolean register(UserRegisterReqDTO requestParam) {
         verifyCode(requestParam.getUsername(), requestParam.getCode());
         UserDO user = userMapper.selectOne(new LambdaQueryWrapper<UserDO>()
                 .select(UserDO::getUsername)
@@ -106,7 +99,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
                 .build();
         userMapper.insert(newUser);
 
-        return null;
+        return true;
     }
 
     @Override
