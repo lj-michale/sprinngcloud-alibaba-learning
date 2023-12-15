@@ -5,7 +5,6 @@ import cn.dev33.satoken.stp.StpUtil;
 import com.turing.springboot.dto.req.UserLoginReqDTO;
 import com.turing.springboot.dto.req.UserRegisterReqDTO;
 import com.turing.springboot.dto.resp.UserLoginRespDTO;
-import com.turing.springboot.dto.resp.UserRegisterRespDTO;
 import com.turing.springboot.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
