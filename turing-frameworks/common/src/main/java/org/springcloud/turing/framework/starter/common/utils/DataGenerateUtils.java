@@ -30,4 +30,15 @@ public class DataGenerateUtils {
 
         return selectedArrays;
     }
+
+    /**
+     * @descri: 生成随机两位小数
+     */
+    public static double getRandomDouble(int num) {
+        Random random = new Random();
+        double randomNumber = random.nextDouble() * num;
+        randomNumber = Math.round(randomNumber * 10) / 100.0;
+
+        return Math.round(randomNumber);
+    }
 }

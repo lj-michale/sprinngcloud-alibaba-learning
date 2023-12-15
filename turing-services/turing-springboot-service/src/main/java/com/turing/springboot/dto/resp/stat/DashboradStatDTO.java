@@ -37,11 +37,11 @@ public class DashboradStatDTO {
     /**
      * 同比
      * */
-    private double tbRate;
+    private String tbRate;
 
     /**
      * 环比
      * */
-    private double hbRate;
+    private String hbRate;
 
 }

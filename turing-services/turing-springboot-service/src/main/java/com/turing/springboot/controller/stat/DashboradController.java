@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static org.springcloud.turing.framework.starter.common.utils.DataGenerateUtils.getRandomDouble;
 import static org.springcloud.turing.framework.starter.common.utils.DataGenerateUtils.selectRandomArrays;
 import static org.springcloud.turing.framework.starter.common.utils.DateTimeUtils.getGenerateDate;
 
@@ -65,41 +66,46 @@ public class DashboradController {
             try {
                 DashboradStatDTO dashboradStatDTO = new DashboradStatDTO();
                 dashboradStatDTO.setIndexName(selectRandomArrays(indexNameArr, 1)[0]);
+                dashboradStatDTO.setIndexValue(getRandomDouble(1000));
+                dashboradStatDTO.setTbRate(String.valueOf(getRandomDouble(10)));
+                dashboradStatDTO.setHbRate(String.valueOf(getRandomDouble(10)));
                 dashboradStatDTO.setDateTime(getGenerateDate("2023-12-1 00:00:00","2023-12-10 00:00:00", 1));
                 dashboradStatDtoList.add(dashboradStatDTO);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
 
-        dashboradStatDtoList.clear();
         // 分组聚合(根据indexName与dateTime)
         //dashboradStatDtoList.stream().collect(Collectors.groupingBy(DashboradStatDTO::getIndexName, Collectors.groupingBy(DashboradStatDTO::getDateTime, Collectors.summarizingInt(DashboradStatDTO::getIndexValue))))
         Map<String, List<DashboradStatDTO>> dashboradStatDtoMap = dashboradStatDtoList.stream().collect(
-                Collectors.groupingBy(item -> item.getIndexName()));
+                Collectors.groupingBy(DashboradStatDTO::getIndexName));
         Iterator<Map.Entry< String,  List<DashboradStatDTO> >> iterator = dashboradStatDtoMap.entrySet().iterator();
+
+        dashboradStatDtoList.clear();
 
         while (iterator.hasNext()) {
             Map.Entry<String, List<DashboradStatDTO>> entry = iterator.next();
             try {
                 String indexName = entry.getKey();
                 double indexValue = 0.00;
-                double tbRate = 0.00;
-                double hbRate = 0.00;
+                String tbRate = "";
+                String hbRate = "";
                 String dataTime = "";
                 List<DashboradStatDTO> valueList = entry.getValue();
                 for(DashboradStatDTO dashboradStatDTO : valueList) {
                     indexValue = indexValue + dashboradStatDTO.getIndexValue();
-                    tbRate = tbRate + dashboradStatDTO.getTbRate();
-                    hbRate = hbRate + dashboradStatDTO.getHbRate();
+                    tbRate = dashboradStatDTO.getTbRate();
+                    hbRate = dashboradStatDTO.getHbRate();
                     dataTime = dashboradStatDTO.getDateTime();
                 }
                 DashboradStatDTO dashboradStatDTO = new DashboradStatDTO();
                 dashboradStatDTO.setIndexName(indexName);
                 dashboradStatDTO.setDateTime(dataTime);
                 dashboradStatDTO.setIndexValue(indexValue);
-                dashboradStatDTO.setHbRate(tbRate/valueList.size());
-                dashboradStatDTO.setHbRate(hbRate/valueList.size());
+                dashboradStatDTO.setHbRate(hbRate);
+                dashboradStatDTO.setTbRate(tbRate);
                 dashboradStatDtoList.add(dashboradStatDTO);
             } catch (Exception e) {
                 e.printStackTrace();
