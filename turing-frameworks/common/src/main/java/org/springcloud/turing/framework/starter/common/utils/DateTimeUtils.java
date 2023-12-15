@@ -2,6 +2,11 @@ package org.springcloud.turing.framework.starter.common.utils;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
+
 /**
  * @descri: 时间日期处理工具
  *
@@ -21,5 +26,23 @@ public class DateTimeUtils {
     };
 
 
+    /**
+     * @descri:
+     *
+     * @param startDate 2021-1-1 00:00:00
+     * @param endDate  2021-11-11 00:00:00
+     * @param formatType
+     */
+    public static String getGenerateDate(String startDate,
+                                   String endDate,
+                                   Integer formatType) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat(dateFormatArr[formatType]);
+        long start = sdf.parse(startDate).getTime();
+        long end = sdf.parse(endDate).getTime();
+        Random random = new Random();
+        long bizDate = start + (long) (random.nextDouble() * (end - start + 1));
+
+        return sdf.format(new Date(bizDate));
+    }
 
 }

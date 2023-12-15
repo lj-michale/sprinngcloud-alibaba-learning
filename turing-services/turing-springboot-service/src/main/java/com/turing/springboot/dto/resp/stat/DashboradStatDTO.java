@@ -32,7 +32,7 @@ public class DashboradStatDTO {
     /**
      * 计算时间
      * */
-    private Date dateTime;
+    private String dateTime;
 
     /**
      * 同比

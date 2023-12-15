@@ -8,10 +8,12 @@ import org.springcloud.turing.framework.starter.log.annotation.ILog;
 import org.springcloud.turing.framework.starter.web.Results;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.springcloud.turing.framework.starter.common.utils.DataGenerateUtils.selectRandomArrays;
+import static org.springcloud.turing.framework.starter.common.utils.DateTimeUtils.getGenerateDate;
 
 /**
  * @descri: 用户管理模块
@@ -45,10 +47,14 @@ public class DashboradController {
         String[] indexNameArr = {"GMV", "MAU", "Cost", "Revenue"};
 
         for (int i=0; i<10; i++) {
-            DashboradStatDTO dashboradStatDTO = new DashboradStatDTO();
-            dashboradStatDTO.setIndexName(selectRandomArrays(indexNameArr, 1)[0]);
-
-            dashboradStatDtoList.add(dashboradStatDTO);
+            try {
+                DashboradStatDTO dashboradStatDTO = new DashboradStatDTO();
+                dashboradStatDTO.setIndexName(selectRandomArrays(indexNameArr, 1)[0]);
+                dashboradStatDTO.setDateTime(getGenerateDate("2023-12-1 00:00:00","2023-12-10 00:00:00", 1));
+                dashboradStatDtoList.add(dashboradStatDTO);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         return dashboradStatDtoList;
