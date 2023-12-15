@@ -42,7 +42,6 @@ public class DashboradController {
 
     public List<DashboradStatDTO> generateDashboradDtoList() {
         List<DashboradStatDTO> dashboradStatDtoList = new ArrayList<>();
-
         String[] indexNameArr = {"GMV", "MAU", "Cost", "Revenue"};
 
         for (int i=0; i<10; i++) {
