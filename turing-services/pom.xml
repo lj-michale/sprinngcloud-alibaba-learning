@@ -15,6 +15,7 @@
         <module>turing-demo-service</module>
         <module>turing-blog-service</module>
         <module>turing-springboot-service</module>
+        <module>turing-gateway</module>
     </modules>
 
     <properties>
