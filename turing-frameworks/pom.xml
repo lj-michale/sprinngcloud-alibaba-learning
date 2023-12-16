@@ -24,5 +24,6 @@
         <module>log</module>
         <module>web</module>
         <module>tenant</module>
+        <module>flowable</module>
     </modules>
 </project>

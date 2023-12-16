@@ -5,7 +5,6 @@ package org.springcloud.turing.biz.controller.user;
 import cn.dev33.satoken.annotation.SaCheckLogin;
 import cn.dev33.satoken.stp.StpUtil;
 import com.alibaba.fastjson2.JSON;
-import io.lettuce.core.dynamic.annotation.Param;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springcloud.turing.biz.dto.req.CodeDTO;
