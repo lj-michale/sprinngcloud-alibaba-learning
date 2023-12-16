@@ -16,6 +16,7 @@
         <module>turing-blog-service</module>
         <module>turing-springboot-service</module>
         <module>turing-gateway</module>
+        <module>turing-shortlink</module>
     </modules>
 
     <properties>
