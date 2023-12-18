@@ -1,14 +1,14 @@
 package com.turing.springboot.controller;
 
 import com.turing.springboot.dao.entity.UpdateTimeLineVo;
+import com.turing.springboot.mq.rocketmq.RocketMQProducer;
 import com.turing.springboot.service.UpdateTimeLineServer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springcloud.turing.framework.starter.common.exception.ResultBody;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springcloud.turing.framework.starter.convention.result.Result;
+import org.springcloud.turing.framework.starter.web.Results;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -25,8 +25,13 @@ import java.util.List;
 @RequestMapping("/api/turing")
 public class TuringController {
 
+    private final String topic = "delay-topic";
+
     @Resource
     private UpdateTimeLineServer updateTimeLineServer;
+
+    @Resource
+    private RocketMQProducer producer;
 
     @GetMapping("/update/timeline")
     @ResponseBody
@@ -42,6 +47,12 @@ public class TuringController {
     @ResponseBody
     public String quick(){
         return "Hello SpringBoot";
+    }
+
+    @RequestMapping("/sendMessage")
+    public Result<String> sendMessage(String message) {
+        producer.sendMessage(topic, message);
+        return Results.success("消息发送成功");
     }
 
 

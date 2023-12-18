@@ -6,8 +6,6 @@ import com.turing.springboot.dto.req.UserLoginReqDTO;
 import com.turing.springboot.dto.req.UserRegisterReqDTO;
 import com.turing.springboot.dto.resp.UserLoginRespDTO;
 import com.turing.springboot.service.user.UserService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springcloud.turing.framework.starter.convention.result.Result;
@@ -26,7 +24,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/turing/user")
-@Api(tags = "用户相关接口")
 public class UserController {
 
     @Autowired
@@ -37,7 +34,6 @@ public class UserController {
      */
     @ILog
     @PostMapping("/login")
-    @ApiOperation("用户登录")
     @ResponseBody
     public Result<String> login(@RequestBody UserLoginReqDTO userLoginReqDTO) {
         return Results.success(userService.login(userLoginReqDTO));

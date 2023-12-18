@@ -34,6 +34,7 @@ public final class Results {
      */
     public static Result<Void> success() {
         return new Result<Void>()
+                .setMessage("success")
                 .setCode(Result.SUCCESS_CODE);
     }
 
@@ -43,6 +44,7 @@ public final class Results {
     public static <T> Result<T> success(T data) {
         return new Result<T>()
                 .setCode(Result.SUCCESS_CODE)
+                .setMessage("success")
                 .setData(data);
     }
 

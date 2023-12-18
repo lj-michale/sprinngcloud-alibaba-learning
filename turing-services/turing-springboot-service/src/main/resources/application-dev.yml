@@ -8,6 +8,11 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  mail:
+    host: smtp.163.com
+    port: 465
+    username: dataops_tony2016@163.com
+    password: JFCBGJYAYALXLECY
   datasource:
     username: root
     password: Turing@2022
@@ -25,11 +30,6 @@ spring:
         max-wait: 5000ms
         max-idle: 100
         min-idle: 50
-  # config of email: from email
-  mail:
-    host: smtp.163.com
-    username: dataops_tony2016@163.com
-    password: JFCBGJYAYALXLECY
 
 # config of rokectmq
 rocketmq:
@@ -49,11 +49,8 @@ rocketmq:
       db-column-underline: true
       refresh-mapper: true
   configuration:
-    # 自动驼峰命名
     map-underscore-to-camel-case: true
-    # 查询结果中包含空值的列，在映射的时候，不会映射这个字段
     call-setters-on-nulls: true
-    # 开启 sql 日志
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 # mybatis-plus日志查询开启
@@ -77,11 +74,13 @@ sa-token:
   is-read-header: true
   is-log: false
 
-knife4j:
-  enable: true
-  # 是否开启生产环境屏蔽   true:关闭swagger，false:开启swagger
-  production: false
-  basic:
-    enable: false
-    username: admin
-    password: admin
+# 线程池配置
+thread:
+  pool:
+    core-pool-size: 5
+    max-pool-size: 10
+    queue-capacity: 50
+    keep-alive-seconds: 60
+
+
+
