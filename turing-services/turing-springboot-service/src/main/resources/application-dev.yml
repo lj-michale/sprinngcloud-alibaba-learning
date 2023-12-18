@@ -10,7 +10,7 @@ spring:
       matching-strategy: ant_path_matcher
   mail:
     host: smtp.163.com
-    port: 465
+    port: 25
     username: dataops_tony2016@163.com
     password: JFCBGJYAYALXLECY
   datasource:
