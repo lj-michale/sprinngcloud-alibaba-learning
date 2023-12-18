@@ -13,7 +13,6 @@ import com.turing.springboot.dto.req.UserDeletionReqDTO;
 import com.turing.springboot.dto.req.UserLoginReqDTO;
 import com.turing.springboot.dto.req.UserRegisterReqDTO;
 import com.turing.springboot.dto.resp.UserLoginRespDTO;
-import com.turing.springboot.dto.resp.UserRegisterRespDTO;
 import com.turing.springboot.service.RedisService;
 import com.turing.springboot.service.user.UserService;
 import lombok.RequiredArgsConstructor;

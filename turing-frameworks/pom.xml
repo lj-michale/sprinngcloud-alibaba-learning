@@ -25,5 +25,6 @@
         <module>web</module>
         <module>tenant</module>
         <module>flowable</module>
+        <module>mq</module>
     </modules>
 </project>

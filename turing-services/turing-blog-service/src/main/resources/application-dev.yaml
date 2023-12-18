@@ -35,13 +35,13 @@ spring:
       username: nacos
 
 # config of rokectmq
-rocketmq:
-  name-server: 192.168.43.102:9876
-  producer:
-    group: turing-blog-service-msg-execute_pg
-    send-message-timeout: 2000
-    retry-times-when-send-failed: 1
-    retry-times-when-send-async-failed: 1
+#rocketmq:
+#  name-server: 192.168.43.102:9876
+#  producer:
+#    group: turing-blog-service-msg-execute_pg
+#    send-message-timeout: 2000
+#    retry-times-when-send-failed: 1
+#    retry-times-when-send-async-failed: 1
 
 mybatis-plus:
   # mapper映射地址

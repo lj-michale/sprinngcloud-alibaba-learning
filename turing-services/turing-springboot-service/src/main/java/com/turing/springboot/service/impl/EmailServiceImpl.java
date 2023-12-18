@@ -57,6 +57,7 @@ public class EmailServiceImpl implements EmailService {
             mimeMessageHelper.setTo(mailDTO.getToEmail());
             mimeMessageHelper.setSubject(mailDTO.getSubject());
             mimeMessageHelper.setText(process, true);
+
             javaMailSender.send(mimeMessage);
         } catch (MessagingException e) {
             e.printStackTrace();

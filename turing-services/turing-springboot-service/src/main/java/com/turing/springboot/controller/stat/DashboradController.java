@@ -71,22 +71,20 @@ public class DashboradController {
                 dashboradStatDTO.setHbRate(String.valueOf(getRandomDouble(10)));
                 dashboradStatDTO.setDateTime(getGenerateDate("2023-12-1 00:00:00","2023-12-10 00:00:00", 1));
                 dashboradStatDtoList.add(dashboradStatDTO);
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
 
         // 分组聚合(根据indexName与dateTime)
-        //dashboradStatDtoList.stream().collect(Collectors.groupingBy(DashboradStatDTO::getIndexName, Collectors.groupingBy(DashboradStatDTO::getDateTime, Collectors.summarizingInt(DashboradStatDTO::getIndexValue))))
         Map<String, List<DashboradStatDTO>> dashboradStatDtoMap = dashboradStatDtoList.stream().collect(
                 Collectors.groupingBy(DashboradStatDTO::getIndexName));
         Iterator<Map.Entry< String,  List<DashboradStatDTO> >> iterator = dashboradStatDtoMap.entrySet().iterator();
-
         dashboradStatDtoList.clear();
 
         while (iterator.hasNext()) {
             Map.Entry<String, List<DashboradStatDTO>> entry = iterator.next();
+
             try {
                 String indexName = entry.getKey();
                 double indexValue = 0.00;
@@ -94,12 +92,14 @@ public class DashboradController {
                 String hbRate = "";
                 String dataTime = "";
                 List<DashboradStatDTO> valueList = entry.getValue();
+
                 for(DashboradStatDTO dashboradStatDTO : valueList) {
                     indexValue = indexValue + dashboradStatDTO.getIndexValue();
                     tbRate = dashboradStatDTO.getTbRate();
                     hbRate = dashboradStatDTO.getHbRate();
                     dataTime = dashboradStatDTO.getDateTime();
                 }
+
                 DashboradStatDTO dashboradStatDTO = new DashboradStatDTO();
                 dashboradStatDTO.setIndexName(indexName);
                 dashboradStatDTO.setDateTime(dataTime);

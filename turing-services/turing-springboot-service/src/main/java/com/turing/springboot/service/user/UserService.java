@@ -4,7 +4,6 @@ import com.turing.springboot.dto.req.UserDeletionReqDTO;
 import com.turing.springboot.dto.req.UserLoginReqDTO;
 import com.turing.springboot.dto.req.UserRegisterReqDTO;
 import com.turing.springboot.dto.resp.UserLoginRespDTO;
-import com.turing.springboot.dto.resp.UserRegisterRespDTO;
 
 public interface UserService {
 

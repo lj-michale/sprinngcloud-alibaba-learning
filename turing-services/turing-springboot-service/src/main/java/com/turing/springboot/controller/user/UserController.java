@@ -55,9 +55,19 @@ public class UserController {
     @ILog
     @GetMapping("/check-login")
     public Result<UserLoginRespDTO> checkLogin(@RequestParam("accessToken") String accessToken) {
-        UserLoginRespDTO result = userService.checkLogin(accessToken);
+        UserLoginRespDTO userLoginRespDTO = userService.checkLogin(accessToken);
+        return Results.success(userLoginRespDTO);
+    }
 
-        return Results.success(result);
+    /**
+     * 根据账号Id踢人下线
+     */
+    @ILog
+    @PostMapping("/kickout")
+    @ResponseBody
+    public Result<String> kickout(@RequestBody long userId) {
+        StpUtil.kickout(userId);
+        return Results.success("将账号 " + userId + " 踢下线成功");
     }
 
     /**
