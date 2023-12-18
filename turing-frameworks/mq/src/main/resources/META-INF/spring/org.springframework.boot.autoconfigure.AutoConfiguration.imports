@@ -15,4 +15,6 @@
 # limitations under the License.
 #
 
-org.springcloud.turing.framework.starter.mq.confog.LogAutoConfiguration
+org.springcloud.turing.framework.starter.mq.config.MQBaseAutoConfiguration
+org.springcloud.turing.framework.starter.mq.config.MQConsumerAutoConfiguration
+org.springcloud.turing.framework.starter.mq.config.MQProducerAutoConfiguration
