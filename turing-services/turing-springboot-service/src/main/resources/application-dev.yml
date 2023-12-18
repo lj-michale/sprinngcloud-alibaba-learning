@@ -5,6 +5,9 @@ server:
 
 #配置连接数据库
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   datasource:
     username: root
     password: Turing@2022
@@ -74,4 +77,11 @@ sa-token:
   is-read-header: true
   is-log: false
 
-
+knife4j:
+  enable: true
+  # 是否开启生产环境屏蔽   true:关闭swagger，false:开启swagger
+  production: false
+  basic:
+    enable: false
+    username: admin
+    password: admin
