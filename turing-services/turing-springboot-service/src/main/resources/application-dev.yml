@@ -13,6 +13,11 @@ spring:
     port: 25
     username: dataops_tony2016@163.com
     password: JFCBGJYAYALXLECY
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 30000
   datasource:
     username: root
     password: Turing@2022
@@ -82,5 +87,20 @@ thread:
     queue-capacity: 50
     keep-alive-seconds: 60
 
+
+# Xxl-Job分布式定时任务调度中心
+xxl:
+  job:
+    admin:
+      # 调度中心部署跟地址 [选填]：如调度中心集群部署存在多个地址则用逗号分隔。
+      addresses: http://localhost:8080/xxl-job-admin
+    accessToken: default_token
+    executor:
+      appname: mls-xxl-job
+      address: ""
+      ip: ""
+      port: 9999
+      logpath: E:\company\Turing\OpenSource\sprinngcloud-alibaba-learning\turing-services\turing-springboot-service\logs
+      logretentiondays: 7
 
 

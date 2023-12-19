@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springcloud.turing.framework.starter.common.exception.ResultBody;
 import org.springcloud.turing.framework.starter.convention.result.Result;
+import org.springcloud.turing.framework.starter.log.annotation.ILog;
 import org.springcloud.turing.framework.starter.web.Results;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,6 +50,7 @@ public class TuringController {
         return "Hello SpringBoot";
     }
 
+    @ILog
     @RequestMapping("/sendMessage")
     public Result<String> sendMessage(String message) {
         producer.sendMessage(topic, message);
