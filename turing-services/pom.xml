@@ -17,6 +17,7 @@
         <module>turing-springboot-service</module>
         <module>turing-gateway</module>
         <module>turing-shortlink</module>
+        <module>turing-springboot</module>
     </modules>
 
     <properties>
