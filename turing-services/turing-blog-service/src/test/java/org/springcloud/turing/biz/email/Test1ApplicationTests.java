@@ -1,12 +1,10 @@
 package org.springcloud.turing.biz.email;
 
+import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
-
-import javax.annotation.Resource;
 
 /**
  * @descri

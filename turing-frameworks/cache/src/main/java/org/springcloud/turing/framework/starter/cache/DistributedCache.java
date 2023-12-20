@@ -17,8 +17,8 @@
 
 package org.springcloud.turing.framework.starter.cache;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import org.springcloud.turing.framework.starter.cache.core.CacheGetFilter;
 import org.springcloud.turing.framework.starter.cache.core.CacheGetIfAbsent;
 import org.springcloud.turing.framework.starter.cache.core.CacheLoader;

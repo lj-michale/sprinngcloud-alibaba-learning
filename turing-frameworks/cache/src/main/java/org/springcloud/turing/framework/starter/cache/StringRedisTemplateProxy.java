@@ -19,8 +19,8 @@ package org.springcloud.turing.framework.starter.cache;
 
 import com.alibaba.fastjson2.JSON;
 import com.google.common.collect.Lists;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springcloud.turing.framework.starter.bases.Singleton;
 import org.springcloud.turing.framework.starter.cache.config.RedisDistributedProperties;

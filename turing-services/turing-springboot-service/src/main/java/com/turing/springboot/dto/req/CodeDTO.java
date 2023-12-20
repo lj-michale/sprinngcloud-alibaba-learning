@@ -1,8 +1,7 @@
 package com.turing.springboot.dto.req;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
-
-import javax.validation.constraints.NotBlank;
 
 /**
  * @descri

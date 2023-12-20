@@ -19,11 +19,11 @@ package org.turing.shortlink.admin.common.web;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
+import jakarta.servlet.http.HttpServletRequest;
 import org.turing.shortlink.admin.common.convention.errorcode.BaseErrorCode;
 import org.turing.shortlink.admin.common.convention.exception.AbstractException;
 import org.turing.shortlink.admin.common.convention.result.Result;
 import org.turing.shortlink.admin.common.convention.result.Results;
-import javax.servlet.http.HttpServletRequest;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

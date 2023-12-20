@@ -2,6 +2,7 @@ package org.springcloud.turing.biz.service.impl.user;
 
 import cn.dev33.satoken.stp.StpUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import jakarta.annotation.Resource;
 import org.springcloud.turing.biz.dao.entity.SocialTokenDO;
 import org.springcloud.turing.biz.dao.entity.SocialUserInfoDO;
 import org.springcloud.turing.biz.dao.entity.UserDO;
@@ -10,10 +11,8 @@ import org.springcloud.turing.biz.dao.mapper.UserMapper;
 import org.springcloud.turing.biz.dao.mapper.UserRoleMapper;
 import org.springcloud.turing.biz.dto.req.CodeDTO;
 import org.springcloud.turing.biz.service.user.SocialLoginStrategy;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.Objects;
 
 import static org.springcloud.turing.biz.common.enums.RoleEnum.USER;

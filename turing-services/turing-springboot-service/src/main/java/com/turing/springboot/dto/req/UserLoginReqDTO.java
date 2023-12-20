@@ -1,13 +1,11 @@
 package com.turing.springboot.dto.req;
 
-//import io.swagger.annotations.ApiModelProperty;
-
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 /**
  * @descri 用户登录请求参数

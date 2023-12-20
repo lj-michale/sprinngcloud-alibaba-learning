@@ -3,6 +3,7 @@ package com.turing.springboot.controller;
 import com.turing.springboot.dao.entity.UpdateTimeLineVo;
 import com.turing.springboot.mq.rocketmq.RocketMQProducer;
 import com.turing.springboot.service.UpdateTimeLineServer;
+import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springcloud.turing.framework.starter.common.exception.ResultBody;
@@ -11,7 +12,6 @@ import org.springcloud.turing.framework.starter.log.annotation.ILog;
 import org.springcloud.turing.framework.starter.web.Results;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**

@@ -5,10 +5,10 @@ import com.turing.springboot.dao.entity.UpdateTimeLine;
 import com.turing.springboot.dao.entity.UpdateTimeLineVo;
 import com.turing.springboot.dao.mapper.UpdateTimeLineMapper;
 import com.turing.springboot.service.UpdateTimeLineServer;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;

@@ -17,8 +17,9 @@
 
 package org.springcloud.turing.framework.starter.cache;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.NotBlank;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.Collection;
 

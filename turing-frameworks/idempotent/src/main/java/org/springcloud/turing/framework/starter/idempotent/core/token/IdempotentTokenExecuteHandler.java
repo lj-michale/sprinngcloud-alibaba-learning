@@ -19,7 +19,7 @@ package org.springcloud.turing.framework.starter.idempotent.core.token;
 
 import cn.hutool.core.util.StrUtil;
 import com.google.common.base.Strings;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.springcloud.turing.framework.starter.cache.DistributedCache;

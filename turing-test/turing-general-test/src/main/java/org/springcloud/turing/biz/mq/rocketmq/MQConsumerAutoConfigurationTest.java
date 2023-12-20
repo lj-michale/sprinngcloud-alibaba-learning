@@ -1,5 +1,6 @@
 package org.springcloud.turing.biz.mq.rocketmq;
 
+import jakarta.annotation.Resource;
 import org.junit.After;
 import org.junit.Test;
 import org.springcloud.turing.framework.starter.mq.base.AbstractMQPushConsumer;
@@ -11,7 +12,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;

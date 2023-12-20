@@ -1,6 +1,7 @@
 package org.springcloud.turing.biz.service.impl.user;
 
 import com.alibaba.fastjson2.JSON;
+import jakarta.annotation.Resource;
 import org.springcloud.turing.biz.common.enums.LoginTypeEnum;
 import org.springcloud.turing.biz.config.QqProperties;
 import org.springcloud.turing.biz.dao.entity.QqUserInfoDO;
@@ -14,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;

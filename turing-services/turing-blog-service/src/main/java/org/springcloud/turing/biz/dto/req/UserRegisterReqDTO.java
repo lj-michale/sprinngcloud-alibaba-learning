@@ -17,8 +17,8 @@
 
 package org.springcloud.turing.biz.dto.req;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
-import javax.validation.constraints.NotBlank;
 
 /**
  * 用户注册请求参数
@@ -62,6 +62,5 @@ public class UserRegisterReqDTO {
      * 验证码
      */
     @NotBlank(message = "验证码不能为空")
-//    @ApiModelProperty(value = "验证码")
     private String code;
 }
