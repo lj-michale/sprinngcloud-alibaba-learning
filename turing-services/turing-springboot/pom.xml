@@ -13,6 +13,7 @@
 
     <modules>
         <module>springboot-swagger</module>
+        <module>springboot-rbac</module>
     </modules>
 
     <dependencies>
