@@ -27,12 +27,6 @@ export default defineConfig({
                 changeOrigin: true,
                 ws: false,
                 rewrite: (path) => path.replace(/^\/api/, '')
-            },
-            '/han': {
-                target: 'https://api.vvhan.com/api/',
-                changeOrigin: true,
-                ws: false,
-                rewrite: (path) => path.replace(/^\/han/, '')
             }
         }
     },

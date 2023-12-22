@@ -48,9 +48,9 @@ public final class IdempotentSpELByMQExecuteHandler extends AbstractIdempotentEx
     private final static int TIMEOUT = 600;
     private final static String WRAPPER = "wrapper:spEL:MQ";
 
-    @SneakyThrows
+//    @SneakyThrows
     @Override
-    protected IdempotentParamWrapper buildWrapper(ProceedingJoinPoint joinPoint) {
+    protected IdempotentParamWrapper buildWrapper(ProceedingJoinPoint joinPoint) throws NoSuchMethodException {
         Idempotent idempotent = IdempotentAspect.getIdempotent(joinPoint);
         String key = (String) SpELUtil.parseKey(idempotent.key(), ((MethodSignature) joinPoint.getSignature()).getMethod(), joinPoint.getArgs());
         return IdempotentParamWrapper.builder().lockKey(key).joinPoint(joinPoint).build();

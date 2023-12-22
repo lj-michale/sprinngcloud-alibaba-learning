@@ -40,7 +40,7 @@ public interface IdempotentExecuteHandler {
      * @param joinPoint  AOP 方法处理
      * @param idempotent 幂等注解
      */
-    void execute(ProceedingJoinPoint joinPoint, Idempotent idempotent);
+    void execute(ProceedingJoinPoint joinPoint, Idempotent idempotent) throws NoSuchMethodException;
 
     /**
      * 异常流程处理

@@ -16,7 +16,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.turing.springboot.dao")
 @Slf4j
 public class TuringSpringbootServiceApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(TuringSpringbootServiceApplication.class, args);
         log.info("启动成功：Sa-Token配置如下:{}", SaManager.getConfig());

@@ -64,7 +64,13 @@ public final class RejectedProxyUtil {
         threadPoolExecutor.setRejectedExecutionHandler(proxyRejectedExecutionHandler);
         for (int i = 0; i < 5; i++) {
             try {
-                threadPoolExecutor.execute(() -> ThreadUtil.sleep(100000L));
+                threadPoolExecutor.execute(() -> {
+                    try {
+                        ThreadUtil.sleep(100000L);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
             } catch (Exception ignored) {
                 ignored.printStackTrace();
             }
