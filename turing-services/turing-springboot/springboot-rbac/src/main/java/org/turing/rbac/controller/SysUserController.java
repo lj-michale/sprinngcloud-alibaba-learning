@@ -25,14 +25,27 @@ public class SysUserController {
     @Operation(summary = "添加用户",description = "添加用户")
     public Result createUser(@RequestBody UserReq param) {
 
-        return Results.success("succese");
+        return Results.success("success");
     }
 
     @DeleteMapping("/delete")
     @Auth(id = 2, name = "delete user")
     @Operation(summary = "删除用户",description = "删除用户")
     public Result deleteUser(@RequestBody Long[] ids) {
-        return Results.success("succese");
+        return Results.success("success");
+    }
+
+    @PutMapping("/update")
+    @Auth(id = 3, name = "update user")
+    @Operation(summary = "更新用户",description = "更新用户")
+    public Result updateUser(@RequestBody  UserReq param) {
+        return Results.success("success");
+    }
+
+    @GetMapping("/permissions/{id}")
+    @Operation(summary = "通过id查询用户",description = "Gget user permissions by user id")
+    public Result getPermissionsByUserId(@PathVariable("id") Long id) {
+        return Results.success("success");
     }
 
 }

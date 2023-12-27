@@ -14,4 +14,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/sys/role")
 @Tag(name = "角色管理")
 public class SysRoleController {
+
 }
