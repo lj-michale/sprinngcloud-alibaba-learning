@@ -1,7 +1,7 @@
 package com.turing.springboot.controller;
 
 import com.turing.springboot.dao.entity.UpdateTimeLineVo;
-import com.turing.springboot.mq.rocketmq.RocketMQProducer;
+//import com.turing.springboot.mq.rocketmq.RocketMQProducer;
 import com.turing.springboot.service.UpdateTimeLineServer;
 import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
@@ -31,8 +31,8 @@ public class TuringController {
     @Resource
     private UpdateTimeLineServer updateTimeLineServer;
 
-    @Resource
-    private RocketMQProducer producer;
+//    @Resource
+//    private RocketMQProducer producer;
 
     @GetMapping("/update/timeline")
     @ResponseBody
@@ -53,7 +53,7 @@ public class TuringController {
     @ILog
     @RequestMapping("/sendMessage")
     public Result<String> sendMessage(String message) {
-        producer.sendMessage(topic, message);
+//        producer.sendMessage(topic, message);
         return Results.success("消息发送成功");
     }
 

@@ -17,7 +17,7 @@
         <jjwt.version>0.9.1</jjwt.version>
         <knife4j.version>4.1.0</knife4j.version>
         <fastjson2.version>2.0.36</fastjson2.version>
-        <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
+        <mybatis-plus.version>3.5.4.1</mybatis-plus.version>
         <dozer-core.version>6.5.2</dozer-core.version>
         <hutool-all.version>5.8.20</hutool-all.version>
         <redisson.version>3.21.3</redisson.version>
@@ -74,11 +74,24 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- springboot3.2整合mybatis-plus start -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.mybatis</groupId>
+                        <artifactId>mybatis-spring</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>3.0.3</version>
+            </dependency>
+            <!-- springboot3.2整合mybatis-plus end -->
 
             <dependency>
                 <groupId>org.apache.shardingsphere</groupId>
