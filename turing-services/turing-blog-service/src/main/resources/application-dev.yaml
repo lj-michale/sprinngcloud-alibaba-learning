@@ -14,7 +14,6 @@ spring:
   redis:
     host: 192.168.43.102
     port: 6379
-    password: Turing@2022
     timeout: 10s
     lettuce:
       pool:
@@ -33,6 +32,18 @@ spring:
         server-addr: 192.168.43.102:8848
       password: nacos
       username: nacos
+  data:
+    redis:
+      host: 192.168.43.102
+      port: 6379
+      password: Turing@2022
+      timeout: 10s
+      lettuce:
+        pool:
+          max-active: 150
+          max-wait: 5000ms
+          max-idle: 100
+          min-idle: 50
 
 # config of rokectmq
 #rocketmq:

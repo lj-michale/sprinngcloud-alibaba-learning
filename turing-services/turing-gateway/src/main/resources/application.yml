@@ -1,21 +1,26 @@
+
 server:
-  port: 9999
+  port: 8019
 
 spring:
   application:
-    name: @artifactId@
+    name: turing-gateway
   cloud:
     nacos:
-      username: @nacos.username@
-      password: @nacos.password@
       discovery:
-        server-addr: ${NACOS_HOST:pig-register}:${NACOS_PORT:8848}
-        watch:
-          enabled: true
-        watch-delay: 1000
-      config:
-        server-addr: ${spring.cloud.nacos.discovery.server-addr}
-  config:
-    import:
-      - optional:nacos:application-@profiles.active@.yml
-      - optional:nacos:${spring.application.name}-@profiles.active@.yml
+        server-addr: 192.168.43.102:8848
+      password: nacos
+      username: nacos
+    gateway:
+      enabled: true
+      routes:
+        - id: mhxysy
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/mhxysy/**
+          filters:
+            - StripPrefix=2
+#  config:
+#    import:
+#      - optional:nacos:application-@profiles.active@.yml
+#      - optional:nacos:${spring.application.name}-@profiles.active@.yml
