@@ -14,6 +14,7 @@
     <modules>
         <module>springboot-swagger</module>
         <module>springboot-rbac</module>
+        <module>springboot-admin</module>
     </modules>
 
     <dependencies>
