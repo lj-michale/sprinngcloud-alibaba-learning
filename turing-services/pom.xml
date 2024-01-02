@@ -18,6 +18,7 @@
         <module>turing-gateway</module>
         <module>turing-shortlink</module>
         <module>turing-springboot</module>
+        <module>turing-design-pattern</module>
     </modules>
 
     <properties>
