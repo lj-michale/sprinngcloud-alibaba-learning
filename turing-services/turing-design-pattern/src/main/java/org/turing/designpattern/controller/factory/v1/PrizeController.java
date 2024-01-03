@@ -1,4 +1,4 @@
-package turing.designpattern.controller.factory;
+package turing.designpattern.controller.factory.v1;
 
 import com.alibaba.fastjson2.JSON;
 import org.slf4j.Logger;
