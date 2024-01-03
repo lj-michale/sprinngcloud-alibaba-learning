@@ -1,9 +1,9 @@
-package turing.designpattern.service.factory.v2;
+package org.turing.designpattern.service.factory.v2;
 
-import turing.designpattern.service.factory.v2.store.ICommodity;
-import turing.designpattern.service.factory.v2.store.impl.CardCommodityService;
-import turing.designpattern.service.factory.v2.store.impl.CouponCommodityService;
-import turing.designpattern.service.factory.v2.store.impl.GoodsCommodityService;
+import org.turing.designpattern.service.factory.v2.store.ICommodity;
+import org.turing.designpattern.service.factory.v2.store.impl.CardCommodityService;
+import org.turing.designpattern.service.factory.v2.store.impl.CouponCommodityService;
+import org.turing.designpattern.service.factory.v2.store.impl.GoodsCommodityService;
 
 
 /**

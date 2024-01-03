@@ -1,4 +1,4 @@
-package turing.designpattern.service.factory.coupon;
+package org.turing.designpattern.service.factory.coupon;
 
 public class CouponInfo {
 }

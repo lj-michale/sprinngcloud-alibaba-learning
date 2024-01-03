@@ -1,4 +1,4 @@
-package turing.designpattern.service.factory.v2.store;
+package org.turing.designpattern.service.factory.v2.store;
 
 import java.util.Map;
 

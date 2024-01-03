@@ -1,10 +1,10 @@
-package turing.designpattern.service.factory.v2.store.impl;
+package org.turing.designpattern.service.factory.v2.store.impl;
 
 import com.alibaba.fastjson2.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import turing.designpattern.service.factory.card.IQiYiCardService;
-import turing.designpattern.service.factory.v2.store.ICommodity;
+import org.turing.designpattern.service.factory.card.IQiYiCardService;
+import org.turing.designpattern.service.factory.v2.store.ICommodity;
 
 import java.util.Map;
 

@@ -4,18 +4,18 @@ import com.alibaba.fastjson2.JSON;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import turing.designpattern.service.factory.v1.PrizeService;
+import org.turing.designpattern.service.factory.v1.PrizeService;
 import turing.designpattern.dto.req.factory.AwardReq;
 import turing.designpattern.examples.factory.AwardRes;
-import turing.designpattern.service.factory.v2.StoreFactory;
-import turing.designpattern.service.factory.v2.store.ICommodity;
+import org.turing.designpattern.service.factory.v2.StoreFactory;
+import org.turing.designpattern.service.factory.v2.store.ICommodity;
 
 import java.util.HashMap;
 import java.util.Map;
 
 
 /**
- * @descri:  用一坨坨代码实现
+ * @descri:
  *
  * @author: lj.michale
  * @date: 2024/1/3 15:52
@@ -24,6 +24,12 @@ public class ApiTest {
 
     private Logger logger = LoggerFactory.getLogger(ApiTest.class);
 
+    /**
+     * @descri: 用一坨坨代码实现
+     *
+     * @param null:
+     * @return:
+     */
     @Test
     public void test_awardToUser() {
 
@@ -70,6 +76,12 @@ public class ApiTest {
 
     }
 
+    /**
+     * @descri: 使用工厂设计模式实现
+     *
+     * @param null:
+     * @return:
+     */
     @Test
     public void test_commodity() throws Exception {
         StoreFactory storeFactory = new StoreFactory();

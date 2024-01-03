@@ -1,4 +1,4 @@
-package turing.designpattern.service.factory.goods;
+package org.turing.designpattern.service.factory.goods;
 
 public class DeliverReq {
 

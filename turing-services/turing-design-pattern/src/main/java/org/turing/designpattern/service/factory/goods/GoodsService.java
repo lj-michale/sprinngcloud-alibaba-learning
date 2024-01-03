@@ -1,4 +1,4 @@
-package turing.designpattern.service.factory.goods;
+package org.turing.designpattern.service.factory.goods;
 
 import com.alibaba.fastjson2.JSON;
 

@@ -1,15 +1,15 @@
-package turing.designpattern.service.factory.v1;
+package org.turing.designpattern.service.factory.v1;
 
 import com.alibaba.fastjson2.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turing.designpattern.dto.req.factory.AwardReq;
 import turing.designpattern.examples.factory.AwardRes;
-import turing.designpattern.service.factory.card.IQiYiCardService;
-import turing.designpattern.service.factory.coupon.CouponResult;
-import turing.designpattern.service.factory.coupon.CouponService;
-import turing.designpattern.service.factory.goods.DeliverReq;
-import turing.designpattern.service.factory.goods.GoodsService;
+import org.turing.designpattern.service.factory.card.IQiYiCardService;
+import org.turing.designpattern.service.factory.coupon.CouponResult;
+import org.turing.designpattern.service.factory.coupon.CouponService;
+import org.turing.designpattern.service.factory.goods.DeliverReq;
+import org.turing.designpattern.service.factory.goods.GoodsService;
 
 /**
  * 模拟发奖服务

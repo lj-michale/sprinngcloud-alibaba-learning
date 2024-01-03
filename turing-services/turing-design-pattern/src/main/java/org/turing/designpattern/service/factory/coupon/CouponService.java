@@ -1,4 +1,4 @@
-package turing.designpattern.service.factory.coupon;
+package org.turing.designpattern.service.factory.coupon;
 
 /**
  * 模拟优惠券服务
