@@ -1,4 +1,4 @@
-package turing.designpattern.controller.factory.v1;
+package turing.designpattern.service.factory.v1;
 
 import com.alibaba.fastjson2.JSON;
 import org.slf4j.Logger;
@@ -14,9 +14,9 @@ import turing.designpattern.service.factory.goods.GoodsService;
 /**
  * 模拟发奖服务
  */
-public class PrizeController {
+public class PrizeService {
 
-    private Logger logger = LoggerFactory.getLogger(PrizeController.class);
+    private Logger logger = LoggerFactory.getLogger(PrizeService.class);
 
     public AwardRes awardToUser(AwardReq req) {
         String reqJson = JSON.toJSONString(req);

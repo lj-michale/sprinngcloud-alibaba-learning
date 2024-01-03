@@ -4,7 +4,7 @@ import com.alibaba.fastjson2.JSON;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import turing.designpattern.controller.factory.v1.PrizeController;
+import turing.designpattern.service.factory.v1.PrizeService;
 import turing.designpattern.dto.req.factory.AwardReq;
 import turing.designpattern.examples.factory.AwardRes;
 import turing.designpattern.service.factory.v2.StoreFactory;
@@ -27,7 +27,7 @@ public class ApiTest {
     @Test
     public void test_awardToUser() {
 
-        PrizeController prizeController = new PrizeController();
+        PrizeService prizeService = new PrizeService();
 
         System.out.println("\r\n模拟发放优惠券测试\r\n");
         // 模拟发放优惠券测试
@@ -36,7 +36,7 @@ public class ApiTest {
         req01.setAwardType(1);
         req01.setAwardNumber("EGM1023938910232121323432");
         req01.setBizId("791098764902132");
-        AwardRes awardRes01 = prizeController.awardToUser(req01);
+        AwardRes awardRes01 = prizeService.awardToUser(req01);
 
         logger.info("请求参数：{}", JSON.toJSON(req01));
         logger.info("测试结果：{}", JSON.toJSON(awardRes01));
@@ -54,7 +54,7 @@ public class ApiTest {
             put("consigneeUserAddress", "吉林省.长春市.双阳区.XX街道.檀溪苑小区.#18-2109");
         }});
 
-        AwardRes awardRes02 = prizeController.awardToUser(req02);
+        AwardRes awardRes02 = prizeService.awardToUser(req02);
         logger.info("请求参数：{}", JSON.toJSON(req02));
         logger.info("测试结果：{}", JSON.toJSON(awardRes02));
 
@@ -64,7 +64,7 @@ public class ApiTest {
         req03.setAwardType(3);
         req03.setAwardNumber("AQY1xjkUodl8LO975GdfrYUio");
 
-        AwardRes awardRes03 = prizeController.awardToUser(req03);
+        AwardRes awardRes03 = prizeService.awardToUser(req03);
         logger.info("请求参数：{}", JSON.toJSON(req03));
         logger.info("测试结果：{}", JSON.toJSON(awardRes03));
 
