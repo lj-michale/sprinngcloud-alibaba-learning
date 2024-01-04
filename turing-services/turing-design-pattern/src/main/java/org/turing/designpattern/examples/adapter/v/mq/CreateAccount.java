@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * 开户
  */
-public class create_account {
+public class CreateAccount {
 
     private String number;      // 开户编号
     private String address;     // 开户地

@@ -3,7 +3,7 @@ package org.turing.designpattern.adapter;
 import com.alibaba.fastjson2.JSON;
 import org.junit.jupiter.api.Test;
 import org.turing.designpattern.examples.adapter.v.mq.OrderMq;
-import org.turing.designpattern.examples.adapter.v.mq.create_account;
+import org.turing.designpattern.examples.adapter.v.mq.CreateAccount;
 import org.turing.designpattern.examples.adapter.v2.MQAdapter;
 import org.turing.designpattern.examples.adapter.v2.OrderAdapterService;
 import org.turing.designpattern.examples.adapter.v2.RebateInfo;
@@ -25,19 +25,19 @@ public class ApiTest {
         Date parse = s.parse("2020-06-01 23:20:16");
 
 
-        create_account create_account = new create_account();
-        create_account.setNumber("100001");
-        create_account.setAddress("河北省.廊坊市.广阳区.大学里职业技术学院");
-        create_account.setAccountDate(parse);
-        create_account.setDesc("在校开户");
+        CreateAccount CreateAccount = new CreateAccount();
+        CreateAccount.setNumber("100001");
+        CreateAccount.setAddress("河北省.廊坊市.广阳区.大学里职业技术学院");
+        CreateAccount.setAccountDate(parse);
+        CreateAccount.setDesc("在校开户");
 
         HashMap<String, String> link01 = new HashMap<String, String>();
         link01.put("userId", "number");
         link01.put("bizId", "number");
         link01.put("bizTime", "accountDate");
         link01.put("desc", "desc");
-        RebateInfo rebateInfo01 = MQAdapter.filter(create_account.toString(), link01);
-        System.out.println("mq.create_account(适配前)" + create_account.toString());
+        RebateInfo rebateInfo01 = MQAdapter.filter(CreateAccount.toString(), link01);
+        System.out.println("mq.create_account(适配前)" + CreateAccount.toString());
         System.out.println("mq.create_account(适配后)" + JSON.toJSONString(rebateInfo01));
 
         System.out.println("");
