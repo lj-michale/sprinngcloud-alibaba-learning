@@ -15,6 +15,7 @@
         <module>springboot-swagger</module>
         <module>springboot-rbac</module>
         <module>springboot-admin</module>
+        <module>turing-ddd</module>
     </modules>
 
     <dependencies>
