@@ -44,6 +44,15 @@ public class ApiTest {
         studentProxy.sleep();
     }
 
+    /**
+     * @descri: 可以看到，相对于静态代理类来说，无论有多少接口，这里只需要一个代理类。核心代码也很简单。唯一需要注意的点有以下2点：
+     * JDK动态代理是需要声明接口的，创建一个动态代理类必须得给这个”虚拟“的类一个接口。
+     * 可以看到，这时候经动态代理类创造之后的每个bean已经不是原来那个对象了。
+     * 这里JdkProxy最核心的方法就是:
+     * public Object invoke(Object proxy, Method method, Object[] args) throws Throwable
+     * 其中proxy为代理过之后的对象(并不是原对象)，method为被代理的方法，args为方法的参数。
+     * 如果你不传原有的bean，直接用method.invoke(proxy, args)的话，那么就会陷入一个死循环。
+     *  */
     @Test
     public void testDynamicPerson() {
         JdkProxy proxy = new JdkProxy(new Student("李四"));
