@@ -8,6 +8,9 @@ import org.turing.designpattern.examples.proxy.IUserDao;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.turing.designpattern.examples.proxy.demo2.GamePlayer;
 import org.turing.designpattern.examples.proxy.demo2.GamePlayerProxy;
+import org.turing.designpattern.examples.proxy.demo3.Person;
+import org.turing.designpattern.examples.proxy.demo3.PersonProxy;
+import org.turing.designpattern.examples.proxy.demo3.Student;
 
 public class ApiTest {
 
@@ -28,6 +31,14 @@ public class ApiTest {
         playerProxy.login("我是小A呀","123");  //登陆账号
         playerProxy.win(); //赢了一局
         playerProxy.upgrade(); //上星耀了
+    }
+
+    @Test
+    public void testPerson() {
+        Person student1 = new Student("张三");
+        PersonProxy studentProxy = new PersonProxy(student1);
+        studentProxy.wakeup();
+        studentProxy.sleep();
     }
 
 }
