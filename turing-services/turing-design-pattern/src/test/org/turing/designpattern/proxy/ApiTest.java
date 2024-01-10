@@ -11,6 +11,9 @@ import org.turing.designpattern.examples.proxy.demo2.GamePlayerProxy;
 import org.turing.designpattern.examples.proxy.demo3.Person;
 import org.turing.designpattern.examples.proxy.demo3.PersonProxy;
 import org.turing.designpattern.examples.proxy.demo3.Student;
+import org.turing.designpattern.examples.proxy.dynamics.demo1.JdkProxy;
+
+import java.lang.reflect.Proxy;
 
 public class ApiTest {
 
@@ -39,6 +42,14 @@ public class ApiTest {
         PersonProxy studentProxy = new PersonProxy(student1);
         studentProxy.wakeup();
         studentProxy.sleep();
+    }
+
+    @Test
+    public void testDynamicPerson() {
+        JdkProxy proxy = new JdkProxy(new Student("李四"));
+        Person student = (Person) Proxy.newProxyInstance(proxy.getClass().getClassLoader(), new Class[]{Person.class}, proxy);
+        student.wakeup();
+        student.sleep();
     }
 
 }
