@@ -19,7 +19,6 @@ public class ApiTest {
 
     @Test
     public void test(){
-
         // 菜系 + 厨师；广东（粤菜）、江苏（苏菜）、山东（鲁菜）、四川（川菜）
         ICuisine guangDoneCuisine = new GuangDoneCuisine(new GuangDongCook());
         JiangSuCuisine jiangSuCuisine = new JiangSuCuisine(new JiangSuCook());
