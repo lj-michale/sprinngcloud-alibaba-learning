@@ -1,6 +1,5 @@
 package org.turing.designpattern.examples.iterator.group;
 
-
 import org.turing.designpattern.examples.iterator.lang.Collection;
 import org.turing.designpattern.examples.iterator.lang.Iterator;
 

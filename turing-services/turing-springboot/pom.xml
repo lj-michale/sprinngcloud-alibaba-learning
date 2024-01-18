@@ -16,6 +16,7 @@
         <module>springboot-rbac</module>
         <module>springboot-admin</module>
         <module>turing-ddd</module>
+        <module>turing-springboot-easyexcel</module>
     </modules>
 
     <dependencies>
