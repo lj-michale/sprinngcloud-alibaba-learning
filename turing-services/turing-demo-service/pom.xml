@@ -17,6 +17,7 @@
             <artifactId>turing-database-spring-boot-starter</artifactId>
             <version>${project.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.turing</groupId>
             <artifactId>turing-web-spring-boot-starter</artifactId>

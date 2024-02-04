@@ -20,5 +20,4 @@ public class TuringSpringbootServiceApplication {
         SpringApplication.run(TuringSpringbootServiceApplication.class, args);
         log.info("启动成功：Sa-Token配置如下:{}", SaManager.getConfig());
     }
-
 }
