@@ -35,8 +35,9 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.concurrent.TimeUnit;
 
+
 /**
- * 基于 SpEL 方法验证请求幂等性，适用于 MQ 场景
+ * @descri 基于 SpEL 方法验证请求幂等性，适用于 MQ 场景
  *
  *
  */
@@ -46,9 +47,10 @@ public final class IdempotentSpELByMQExecuteHandler extends AbstractIdempotentEx
     private final DistributedCache distributedCache;
 
     private final static int TIMEOUT = 600;
+
     private final static String WRAPPER = "wrapper:spEL:MQ";
 
-//    @SneakyThrows
+    @SneakyThrows
     @Override
     protected IdempotentParamWrapper buildWrapper(ProceedingJoinPoint joinPoint) throws NoSuchMethodException {
         Idempotent idempotent = IdempotentAspect.getIdempotent(joinPoint);
@@ -61,13 +63,19 @@ public final class IdempotentSpELByMQExecuteHandler extends AbstractIdempotentEx
         String uniqueKey = wrapper.getIdempotent().uniqueKeyPrefix() + wrapper.getLockKey();
         Boolean setIfAbsent = ((StringRedisTemplate) distributedCache.getInstance())
                 .opsForValue()
-                .setIfAbsent(uniqueKey, IdempotentMQConsumeStatusEnum.CONSUMING.getCode(), TIMEOUT, TimeUnit.SECONDS);
+                .setIfAbsent(uniqueKey,
+                        IdempotentMQConsumeStatusEnum.CONSUMING.getCode(),
+                        TIMEOUT,
+                        TimeUnit.SECONDS);
+
         if (setIfAbsent != null && !setIfAbsent) {
             String consumeStatus = distributedCache.get(uniqueKey, String.class);
             boolean error = IdempotentMQConsumeStatusEnum.isError(consumeStatus);
-            LogUtil.getLog(wrapper.getJoinPoint()).warn("[{}] MQ repeated consumption, {}.", uniqueKey, error ? "Wait for the client to delay consumption" : "Status is completed");
+            LogUtil.getLog(wrapper.getJoinPoint())
+                    .warn("[{}] MQ repeated consumption, {}.", uniqueKey, error ? "Wait for the client to delay consumption" : "Status is completed");
             throw new RepeatConsumptionException(error);
         }
+
         IdempotentContext.put(WRAPPER, wrapper);
     }
 
@@ -80,7 +88,8 @@ public final class IdempotentSpELByMQExecuteHandler extends AbstractIdempotentEx
             try {
                 distributedCache.delete(uniqueKey);
             } catch (Throwable ex) {
-                LogUtil.getLog(wrapper.getJoinPoint()).error("[{}] Failed to del MQ anti-heavy token.", uniqueKey);
+                LogUtil.getLog(wrapper.getJoinPoint())
+                        .error("[{}] Failed to del MQ anti-heavy token.", uniqueKey);
             }
         }
     }
@@ -94,7 +103,8 @@ public final class IdempotentSpELByMQExecuteHandler extends AbstractIdempotentEx
             try {
                 distributedCache.put(uniqueKey, IdempotentMQConsumeStatusEnum.CONSUMED.getCode(), idempotent.keyTimeout(), TimeUnit.SECONDS);
             } catch (Throwable ex) {
-                LogUtil.getLog(wrapper.getJoinPoint()).error("[{}] Failed to set MQ anti-heavy token.", uniqueKey);
+                LogUtil.getLog(wrapper.getJoinPoint())
+                        .error("[{}] Failed to set MQ anti-heavy token.", uniqueKey);
             }
         }
     }

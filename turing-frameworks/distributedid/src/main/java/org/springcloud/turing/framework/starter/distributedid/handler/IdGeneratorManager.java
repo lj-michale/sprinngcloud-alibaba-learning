@@ -48,7 +48,8 @@ public final class IdGeneratorManager {
     /**
      * 注册 ID 生成器
      */
-    public static void registerIdGenerator(@NonNull String resource, @NonNull IdGenerator idGenerator) {
+    public static void registerIdGenerator(@NonNull String resource,
+                                           @NonNull IdGenerator idGenerator) {
         IdGenerator actual = MANAGER.get(resource);
         if (actual != null) {
             return;
@@ -60,13 +61,17 @@ public final class IdGeneratorManager {
      * 根据 {@param resource} 获取 ID 生成器
      */
     public static ServiceIdGenerator getIdGenerator(@NonNull String resource) {
-        return Optional.ofNullable(MANAGER.get(resource)).map(each -> (ServiceIdGenerator) each).orElse(null);
+        return Optional
+                .ofNullable(MANAGER.get(resource))
+                .map(each -> (ServiceIdGenerator) each).orElse(null);
     }
 
     /**
      * 获取默认 ID 生成器 {@link DefaultServiceIdGenerator}
      */
     public static ServiceIdGenerator getDefaultServiceIdGenerator() {
-        return Optional.ofNullable(MANAGER.get("default")).map(each -> (ServiceIdGenerator) each).orElse(null);
+        return Optional
+                .ofNullable(MANAGER.get("default"))
+                .map(each -> (ServiceIdGenerator) each).orElse(null);
     }
 }

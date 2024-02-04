@@ -46,4 +46,5 @@ public abstract class AbstractIdempotentExecuteHandler implements IdempotentExec
         IdempotentParamWrapper idempotentParamWrapper = buildWrapper(joinPoint).setIdempotent(idempotent);
         handler(idempotentParamWrapper);
     }
+
 }

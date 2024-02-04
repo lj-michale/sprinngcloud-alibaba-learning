@@ -186,7 +186,11 @@ public class StringRedisTemplateProxy implements DistributedCache {
     }
 
     @Override
-    public void safePut(String key, Object value, long timeout, TimeUnit timeUnit, RBloomFilter<String> bloomFilter) {
+    public void safePut(String key,
+                        Object value,
+                        long timeout,
+                        TimeUnit timeUnit,
+                        RBloomFilter<String> bloomFilter) {
         put(key, value, timeout, timeUnit);
         if (bloomFilter != null) {
             bloomFilter.add(key);
@@ -208,7 +212,12 @@ public class StringRedisTemplateProxy implements DistributedCache {
         return stringRedisTemplate.countExistingKeys(Lists.newArrayList(keys));
     }
 
-    private <T> T loadAndSet(String key, CacheLoader<T> cacheLoader, long timeout, TimeUnit timeUnit, boolean safeFlag, RBloomFilter<String> bloomFilter) {
+    private <T> T loadAndSet(String key,
+                             CacheLoader<T> cacheLoader,
+                             long timeout,
+                             TimeUnit timeUnit,
+                             boolean safeFlag,
+                             RBloomFilter<String> bloomFilter) {
         T result = cacheLoader.load();
         if (CacheUtil.isNullOrBlank(result)) {
             return result;

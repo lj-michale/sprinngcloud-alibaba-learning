@@ -14,7 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.springcloud.turing.framework.starter.idempotent.annotation;
 
 import org.springcloud.turing.framework.starter.idempotent.enums.IdempotentSceneEnum;
@@ -69,4 +68,5 @@ public @interface Idempotent {
      * {@link IdempotentSceneEnum#MQ} and {@link IdempotentTypeEnum#SPEL} 时生效
      */
     long keyTimeout() default 3600L;
+
 }

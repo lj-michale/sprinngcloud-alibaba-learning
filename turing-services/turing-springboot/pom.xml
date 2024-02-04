@@ -17,6 +17,7 @@
         <module>springboot-admin</module>
         <module>turing-ddd</module>
         <module>turing-springboot-easyexcel</module>
+        <module>springboor-rocketmq</module>
     </modules>
 
     <dependencies>
