@@ -238,7 +238,7 @@ let handleLogin = () => {
   width: 100%;
   height: 100vh;
   justify-content: center;
-  background: url("@/assets/img/login-background.jpg") no-repeat;
+  background: url("@/assets/login-background.jpg") no-repeat;
   background-size: cover;
   .login-form {
     border-radius: 6px;
