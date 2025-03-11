@@ -6,7 +6,7 @@
         :rules="loginRules"
         class="login-form"
     >
-      <h3 class="title">后台管理系统</h3>
+      <h3 class="title">景旺电子大数据服务平台</h3>
       <div class="loginType">
         <div class="cursor-pointer" @click="switchLogin">
           {{ isPassword ? "验证码登录" : "密码登录" }}
@@ -242,7 +242,7 @@ let handleLogin = () => {
   background-size: cover;
   .login-form {
     border-radius: 6px;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.84);
     width: 400px;
     padding: 25px 25px 5px 25px;
     box-sizing: border-box;

@@ -1,5 +1,5 @@
 <template>
-  <div>个人中心页面2</div>
+  <div>个人中心页面-set页面</div>
 </template>
 
 <script setup lang="ts">

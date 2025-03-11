@@ -149,15 +149,15 @@ const _getViews = (view: any, type: any) => {
     let res;
     let modules: any;
     if (type == "one") {
-        modules = import.meta.glob("../view/*.vue");
+        modules = import.meta.glob("../views/*.vue");
     } else {
-        modules = import.meta.glob("../view/**/index.vue");
+        modules = import.meta.glob("../views/**/index.vue");
     }
     for (const path in modules) {
         const dir =
             type == "one"
-                ? path.split("view")[1].split(".vue")[0]
-                : path.split("view/")[1].split("/index.vue")[0];
+                ? path.split("views")[1].split(".vue")[0]
+                : path.split("views/")[1].split("/index.vue")[0];
         if (dir === view) {
             res = () => modules[path]();
         }
