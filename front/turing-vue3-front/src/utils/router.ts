@@ -261,4 +261,56 @@ export const routerData = [
 
         ],
     },
+    {
+        path: "/schedule",
+        name: "schedule",
+        id: "7-3",
+        meta: {
+            title: "作业调度",
+        },
+        icon: "Monitor",
+        children: [
+            {
+                path: "/schedule-job",
+                name: "schedule-job",
+                icon: "Platform",
+                id: "7-3-1",
+                meta: {
+                    title: "JOB调度",
+                },
+                url: "schedule/job",
+            },
+        ],
+    },
+    {
+        path: "/example",
+        name: "example",
+        id: "8-3",
+        meta: {
+            title: "练习样例",
+        },
+        icon: "Monitor",
+        children: [
+            {
+                path: "/example-example1",
+                name: "example-example1",
+                icon: "Platform",
+                id: "8-3-1",
+                meta: {
+                    title: "练习样例1",
+                },
+                url: "example/example1",
+            },
+            {
+                path: "/example-example2",
+                name: "example-example2",
+                icon: "Platform",
+                id: "8-3-1",
+                meta: {
+                    title: "练习样例2",
+                },
+                url: "example/example2",
+            },
+        ],
+    },
 ];
