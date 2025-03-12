@@ -23,8 +23,8 @@ export const routerData = [
         },
         children: [
             {
-                path: "/userInfo",
-                name: "userInfo",
+                path: "/user-info",
+                name: "user-info",
                 icon: "Avatar",
                 id: "1-2-1",
                 meta: {
@@ -33,8 +33,8 @@ export const routerData = [
                 url: "user/info",
             },
             {
-                path: "/userSet",
-                name: "userSet",
+                path: "/user-set",
+                name: "user-set",
                 icon: "Tools",
                 id: "1-2-2",
                 meta: {
@@ -54,8 +54,8 @@ export const routerData = [
         icon: "Monitor",
         children: [
             {
-                path: "/adminInfo",
-                name: "adminInfo",
+                path: "/system-info",
+                name: "system-info",
                 icon: "Platform",
                 id: "2-2-1",
                 meta: {
@@ -64,8 +64,8 @@ export const routerData = [
                 url: "system/info",
             },
             {
-                path: "/adminSet",
-                name: "adminSet",
+                path: "/system-set",
+                name: "system-set",
                 icon: "Tools",
                 id: "2-2-2",
                 meta: {
@@ -106,8 +106,8 @@ export const routerData = [
         icon: "Monitor",
         children: [
             {
-                path: "/dataCompute",
-                name: "dataCompute",
+                path: "/data-compute",
+                name: "data-comput",
                 icon: "Platform",
                 id: "4-7-1",
                 meta: {
@@ -116,8 +116,8 @@ export const routerData = [
                 url: "bigdata/compute",
             },
             {
-                path: "/dataSync",
-                name: "dataSync",
+                path: "/data-sync",
+                name: "data-sync",
                 icon: "Platform",
                 id: "4-7-2",
                 meta: {
@@ -126,8 +126,8 @@ export const routerData = [
                 url: "bigdata/sync",
             },
             {
-                path: "/dataApi",
-                name: "dataApi",
+                path: "/data-api",
+                name: "data-api",
                 icon: "Platform",
                 id: "4-7-3",
                 meta: {
@@ -136,8 +136,8 @@ export const routerData = [
                 url: "bigdata/api",
             },
             {
-                path: "/dataBi",
-                name: "dataBi",
+                path: "/data-bi",
+                name: "data-bi",
                 icon: "Platform",
                 id: "4-7-4",
                 meta: {
@@ -146,8 +146,8 @@ export const routerData = [
                 url: "bigdata/bi",
             },
             {
-                path: "/dataGovernance",
-                name: "dataGovernance",
+                path: "/data-governance",
+                name: "data-governance",
                 icon: "Platform",
                 id: "4-7-5",
                 meta: {
@@ -156,8 +156,8 @@ export const routerData = [
                 url: "bigdata/governance",
             },
             {
-                path: "/dataAsset",
-                name: "dataAsset",
+                path: "/data-asset",
+                name: "data-asset",
                 icon: "Platform",
                 id: "4-7-6",
                 meta: {
@@ -166,8 +166,8 @@ export const routerData = [
                 url: "bigdata/asset",
             },
             {
-                path: "/dataAnalysis",
-                name: "dataAnalysis",
+                path: "/data-analysis",
+                name: "data-analysis",
                 icon: "Platform",
                 id: "4-7-7",
                 meta: {
@@ -220,51 +220,9 @@ export const routerData = [
         ],
     },
     {
-        path: "/operation",
-        name: "operation",
-        id: "6-3",
-        meta: {
-            title: "运维平台",
-        },
-        icon: "Monitor",
-        children: [
-            {
-                path: "/operation-monitor",
-                name: "operation-monitor",
-                icon: "Platform",
-                id: "6-3-1",
-                meta: {
-                    title: "运维监控",
-                },
-                url: "operation/monitor",
-            },
-            {
-                path: "/operation-alarm",
-                name: "operation-alarm",
-                icon: "Platform",
-                id: "6-3-2",
-                meta: {
-                    title: "运维告警",
-                },
-                url: "operation/alarm",
-            },
-            {
-                path: "/operation-devops",
-                name: "operation-devops",
-                icon: "Platform",
-                id: "6-3-3",
-                meta: {
-                    title: "CI/CD",
-                },
-                url: "operation/devops",
-            }
-
-        ],
-    },
-    {
         path: "/schedule",
         name: "schedule",
-        id: "7-3",
+        id: "6-3",
         meta: {
             title: "作业调度",
         },
@@ -274,12 +232,54 @@ export const routerData = [
                 path: "/schedule-job",
                 name: "schedule-job",
                 icon: "Platform",
-                id: "7-3-1",
+                id: "6-3-1",
                 meta: {
                     title: "JOB调度",
                 },
                 url: "schedule/job",
             },
+        ],
+    },
+    {
+        path: "/operation",
+        name: "operation",
+        id: "7-3",
+        meta: {
+            title: "运维平台",
+        },
+        icon: "Monitor",
+        children: [
+            {
+                path: "/operation-monitor",
+                name: "operation-monitor",
+                icon: "Platform",
+                id: "7-3-1",
+                meta: {
+                    title: "运维监控",
+                },
+                url: "operation/monitor",
+            },
+            {
+                path: "/operation-alarm",
+                name: "operation-alarm",
+                icon: "Platform",
+                id: "7-3-2",
+                meta: {
+                    title: "运维告警",
+                },
+                url: "operation/alarm",
+            },
+            {
+                path: "/operation-devops",
+                name: "operation-devops",
+                icon: "Platform",
+                id: "7-3-3",
+                meta: {
+                    title: "CI/CD",
+                },
+                url: "operation/devops",
+            }
+
         ],
     },
     {
