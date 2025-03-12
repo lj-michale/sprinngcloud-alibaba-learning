@@ -6,9 +6,9 @@
 
 <script lang="ts" setup>
 import { useRouter, useRoute } from 'vue-router'
-import menuTree from './menuTree.vue'
+import menuTree from './MenuTree.vue'
 import {defineComponent, watch} from 'vue'
-import MenuTree from "@/views/layout/aside/MenuTree.vue";
+import MenuTree from "./MenuTree.vue";
 
 </script>
 

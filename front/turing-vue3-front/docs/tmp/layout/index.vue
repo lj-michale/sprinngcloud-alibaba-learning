@@ -12,9 +12,9 @@
 </template>
 
 <script lang="ts" setup>
-import Aside from '@/views/layout/aside/Aside'
-import Header from '@/views/layout/header/Header'
-import Footer from '@/views/layout/footer/Footer'
+import Aside from './aside/Aside.vue'
+import Header from './header/Header.vue'
+import Footer from './footer/Footer.vue'
 
 </script>
 

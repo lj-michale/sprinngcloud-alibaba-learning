@@ -1,14 +1,14 @@
 /**
  * @descr: 路由控制
+ *
  * @author: Tony
  * @date: 2024-07-14
  * */
-
 import { createRouter, createWebHistory } from "vue-router";
-import layout from "@/views/layout/index.vue";
+import layout from "@/layout/index.vue";
 import { routerData } from "@/utils/router.ts";
-import pinia from "@/store/index";
-import { useStore } from "@/store/module/useStore.ts";
+import pinia from "../../docs/tmp";
+import { useStore } from "@/store/index.ts";
 
 import Login from '@/views/login/index'
 
@@ -36,8 +36,8 @@ let routes = [
         redirect: "/login",
     },
     {
-        path: "/index",
         id: "1",
+        path: "/index",
         component: layout,
         children: [...store.route],
     },

@@ -37,14 +37,17 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { useStore } from "@/store/module/useStore.ts";
+import { useStore } from "../../../../src/store";
 import { useRouter } from "vue-router";
-import { routerData } from "@/utils/router.ts";
+import { routerData } from "../../../../src/utils/router.ts";
 
 const router = useRouter();
 const store = useStore();
 const isCollapse = ref(false);
 const routerList = [...routerData];
+
+console.log("routerList:", routerList)
+
 // 获取到理由数据
 store.addRouter(routerData);
 // 菜单栏点击

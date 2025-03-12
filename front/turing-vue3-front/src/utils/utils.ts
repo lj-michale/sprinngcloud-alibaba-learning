@@ -96,7 +96,6 @@ const _message = (message: any, type: any) => {
  * 二次确定弹窗
  *
  */
-
 const _messageBox = async (
     title: any,
     text: any,
@@ -123,6 +122,7 @@ const _encrypt = (word: any, keyStr: any) => {
         mode: CryptoJS.mode.ECB,
         padding: CryptoJS.pad.Pkcs7,
     });
+
     return encrypted.toString();
 };
 
@@ -137,6 +137,7 @@ const _decrypt = (word: any, keyStr: any) => {
         mode: CryptoJS.mode.ECB,
         padding: CryptoJS.pad.Pkcs7,
     });
+
     return CryptoJS.enc.Utf8.stringify(decrypt).toString();
 };
 
@@ -148,11 +149,15 @@ const _decrypt = (word: any, keyStr: any) => {
 const _getViews = (view: any, type: any) => {
     let res;
     let modules: any;
+
     if (type == "one") {
         modules = import.meta.glob("../views/*.vue");
+        console.log(">>>>>>modules1:",modules);
     } else {
         modules = import.meta.glob("../views/**/index.vue");
+        console.log(">>>>>>modules2:", modules);
     }
+
     for (const path in modules) {
         const dir =
             type == "one"
@@ -162,6 +167,7 @@ const _getViews = (view: any, type: any) => {
             res = () => modules[path]();
         }
     }
+
     return res;
 };
 
