@@ -37,7 +37,7 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { useStore } from "../../../../src/store";
+import { useStore } from "../../../../src/store/modules/user";
 import { useRouter } from "vue-router";
 import { routerData } from "../../../../src/utils/router.ts";
 

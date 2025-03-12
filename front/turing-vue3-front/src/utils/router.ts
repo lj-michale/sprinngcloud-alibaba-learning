@@ -97,16 +97,16 @@ export const routerData = [
         ],
     },
     {
-        path: "/bigdata",
+        path: "/bigdata", // 父路由
         name: "bigdata",
         id: "4-7",
         meta: {
             title: "数据平台",
         },
         icon: "Monitor",
-        children: [
+        children: [ // 子路由（一级嵌套）
             {
-                path: "/data-compute",
+                path: "/data-compute", // 子路由路径
                 name: "data-comput",
                 icon: "Platform",
                 id: "4-7-1",
@@ -144,6 +144,30 @@ export const routerData = [
                     title: "数据可视化",
                 },
                 url: "bigdata/bi",
+                children: [
+                    {
+                        path: "/finebi",
+                        name: "finebi",
+                        icon: "Platform",
+                        id: "4-7-4-1",
+                        component: () => import('@/views/bigdata/bi/finebi/index.vue'),
+                        meta: {
+                            title: "帆软BI",
+                        },
+                        url: "bigdata/bi/finebi",
+                    },
+                    {
+                        path: "/superset",
+                        name: "superset",
+                        icon: "Platform",
+                        id: "4-7-4-2",
+                        component: () => import('@/views/bigdata/bi/superset/index.vue'),
+                        meta: {
+                            title: "Superset BI",
+                        },
+                        url: "bigdata/bi/superset",
+                    },
+                ]
             },
             {
                 path: "/data-governance",

@@ -8,7 +8,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import layout from "@/layout/index.vue";
 import { routerData } from "@/utils/router.ts";
 import pinia from "../../docs/tmp";
-import { useStore } from "@/store/index.ts";
+import { useStore } from "@/store/modules/user";
 
 import Login from '@/views/login/index'
 

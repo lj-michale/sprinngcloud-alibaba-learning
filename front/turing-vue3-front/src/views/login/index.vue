@@ -242,7 +242,7 @@ let handleLogin = () => {
   background-size: cover;
   .login-form {
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.84);
+    background: rgba(255, 255, 255, 0.81);
     width: 400px;
     padding: 25px 25px 5px 25px;
     box-sizing: border-box;
@@ -259,7 +259,7 @@ let handleLogin = () => {
       display: flex;
       justify-content: end;
       font-size: 14px;
-      color: #606266;
+      color: rgba(96, 98, 102, 0.99);
       margin: 0 0 20px 0;
     }
     .forgot {

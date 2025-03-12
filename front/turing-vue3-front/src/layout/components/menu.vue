@@ -26,9 +26,9 @@
           @click="onClick(items.path)"
         >
           <el-icon><component :is="items.icon"></component></el-icon>
-          <template #title
-            ><span>{{ items.meta.title }}</span></template
-          >
+          <template #title>
+            <span>{{ items.meta.title }}</span>
+          </template>
         </el-menu-item>
       </el-sub-menu>
     </template>
@@ -37,7 +37,7 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { useStore } from "@/store/index.ts";
+import { useStore } from "@/store/modules/user";
 import { useRouter } from "vue-router";
 import { routerData } from "@/utils/router.ts";
 
