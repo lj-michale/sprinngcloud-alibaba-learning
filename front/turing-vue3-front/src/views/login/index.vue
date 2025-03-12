@@ -6,7 +6,7 @@
         :rules="loginRules"
         class="login-form"
     >
-      <h3 class="title">景旺电子大数据服务平台</h3>
+      <h3 class="title">景旺电子数智服务平台</h3>
       <div class="loginType">
         <div class="cursor-pointer" @click="switchLogin">
           {{ isPassword ? "验证码登录" : "密码登录" }}

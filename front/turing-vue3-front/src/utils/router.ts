@@ -99,7 +99,7 @@ export const routerData = [
     {
         path: "/bigdata",
         name: "bigdata",
-        id: "4-2",
+        id: "4-7",
         meta: {
             title: "数据平台",
         },
@@ -109,7 +109,7 @@ export const routerData = [
                 path: "/dataCompute",
                 name: "dataCompute",
                 icon: "Platform",
-                id: "4-5-1",
+                id: "4-7-1",
                 meta: {
                     title: "数据计算",
                 },
@@ -119,7 +119,7 @@ export const routerData = [
                 path: "/dataSync",
                 name: "dataSync",
                 icon: "Platform",
-                id: "4-5-2",
+                id: "4-7-2",
                 meta: {
                     title: "数据同步",
                 },
@@ -129,7 +129,7 @@ export const routerData = [
                 path: "/dataApi",
                 name: "dataApi",
                 icon: "Platform",
-                id: "4-5-3",
+                id: "4-7-3",
                 meta: {
                     title: "数据接口",
                 },
@@ -139,7 +139,7 @@ export const routerData = [
                 path: "/dataBi",
                 name: "dataBi",
                 icon: "Platform",
-                id: "4-5-4",
+                id: "4-7-4",
                 meta: {
                     title: "数据可视化",
                 },
@@ -149,12 +149,116 @@ export const routerData = [
                 path: "/dataGovernance",
                 name: "dataGovernance",
                 icon: "Platform",
-                id: "4-5-5",
+                id: "4-7-5",
                 meta: {
                     title: "数据治理",
                 },
                 url: "bigdata/governance",
             },
+            {
+                path: "/dataAsset",
+                name: "dataAsset",
+                icon: "Platform",
+                id: "4-7-6",
+                meta: {
+                    title: "数据资产",
+                },
+                url: "bigdata/asset",
+            },
+            {
+                path: "/dataAnalysis",
+                name: "dataAnalysis",
+                icon: "Platform",
+                id: "4-7-7",
+                meta: {
+                    title: "数据分析",
+                },
+                url: "bigdata/analysis",
+            },
+        ],
+    },
+    {
+        path: "/algorithm",
+        name: "algorithm",
+        id: "5-2",
+        meta: {
+            title: "算法平台",
+        },
+        icon: "Monitor",
+        children: [
+            {
+                path: "/algorithm-market",
+                name: "algorithm-market",
+                icon: "Platform",
+                id: "5-3-1",
+                meta: {
+                    title: "模型市场",
+                },
+                url: "algorithm/market",
+            },
+            {
+                path: "/algorithm-development",
+                name: "algorithm-development",
+                icon: "Platform",
+                id: "5-3-2",
+                meta: {
+                    title: "模型训练",
+                },
+                url: "algorithm/development",
+            },
+            {
+                path: "/algorithm-service",
+                name: "algorithm-service",
+                icon: "Platform",
+                id: "5-3-3",
+                meta: {
+                    title: "算法服务",
+                },
+                url: "algorithm/service",
+            }
+
+        ],
+    },
+    {
+        path: "/operation",
+        name: "operation",
+        id: "6-3",
+        meta: {
+            title: "运维平台",
+        },
+        icon: "Monitor",
+        children: [
+            {
+                path: "/operation-monitor",
+                name: "operation-monitor",
+                icon: "Platform",
+                id: "6-3-1",
+                meta: {
+                    title: "运维监控",
+                },
+                url: "operation/monitor",
+            },
+            {
+                path: "/operation-alarm",
+                name: "operation-alarm",
+                icon: "Platform",
+                id: "6-3-2",
+                meta: {
+                    title: "运维告警",
+                },
+                url: "operation/alarm",
+            },
+            {
+                path: "/operation-devops",
+                name: "operation-devops",
+                icon: "Platform",
+                id: "6-3-3",
+                meta: {
+                    title: "CI/CD",
+                },
+                url: "operation/devops",
+            }
+
         ],
     },
 ];
