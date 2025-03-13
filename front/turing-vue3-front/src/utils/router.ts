@@ -47,7 +47,7 @@ export const routerData = [
     {
         path: "/system",
         name: "system",
-        id: "2-2",
+        id: "2-3",
         meta: {
             title: "系统管理",
         },
@@ -56,8 +56,8 @@ export const routerData = [
             {
                 path: "/system-info",
                 name: "system-info",
-                icon: "Platform",
-                id: "2-2-1",
+                icon: "Tools",
+                id: "2-3-1",
                 meta: {
                     title: "系统信息",
                 },
@@ -67,11 +67,21 @@ export const routerData = [
                 path: "/system-set",
                 name: "system-set",
                 icon: "Tools",
-                id: "2-2-2",
+                id: "2-3-2",
                 meta: {
                     title: "系统设置",
                 },
                 url: "system/set",
+            },
+            {
+                path: "/system-menu",
+                name: "system-menu",
+                icon: "Tools",
+                id: "2-3-3",
+                meta: {
+                    title: "菜单管理",
+                },
+                url: "system/menu",
             },
         ],
     },

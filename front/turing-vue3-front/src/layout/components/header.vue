@@ -1,7 +1,7 @@
 <template>
   <div class="topNav flex align-items-center space-between">
     <div class="flex align-items-center prl2">
-      <!-- <el-icon
+<!--       <el-icon
             :size="24"
             color="#202020"
             class="prl2 cursor-pointer"
@@ -9,8 +9,8 @@
           >
             <Fold v-if="!isCollapse" />
             <Expand v-else />
-          </el-icon> -->
-      <!-- <el-breadcrumb separator="/">
+          </el-icon>
+       <el-breadcrumb separator="/">
             <el-breadcrumb-item :to="{ path: '/index' }"
               >首页</el-breadcrumb-item
             >
@@ -19,7 +19,7 @@
               :key="index"
               >{{ item.title }}</el-breadcrumb-item
             >
-          </el-breadcrumb> -->
+          </el-breadcrumb>-->
     </div>
     <div class="prl2 flex align-items-center cursor-pointer">
       <div>
@@ -46,6 +46,7 @@
 </template>
 
 <script setup lang="ts">
+import {useRouter, useRoute, RouteRecordNormalized} from 'vue-router'
 import { ref } from "vue";
 import screenfull from "screenfull";
 import utils from "@/utils/utils.ts";

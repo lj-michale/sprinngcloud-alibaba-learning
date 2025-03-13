@@ -55,10 +55,10 @@
       </el-skeleton>
     </el-card>
   </div>
-
 </template>
 
 <script lang="ts" setup>
+const username = 'Tony'
 
 </script>
 
