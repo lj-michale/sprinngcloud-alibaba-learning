@@ -22,9 +22,11 @@
           </el-breadcrumb>-->
     </div>
     <div class="prl2 flex align-items-center cursor-pointer">
+      <!-- 是否全屏 -->
       <div>
         <el-icon @click="SetFullScreen"><FullScreen /></el-icon>
       </div>
+
       <el-popover
         :visible="visible"
         placement="bottom"
@@ -41,6 +43,7 @@
           </div>
         </template>
       </el-popover>
+
     </div>
   </div>
 </template>

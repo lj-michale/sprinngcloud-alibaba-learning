@@ -70,12 +70,5 @@ const router = createRouter({
     routes,
 });
 
-router.beforeEach((to, from) => {
-    nProgress.start()
-})
-
-router.afterEach((to, from) => {
-    nProgress.done()
-})
 
 export default router;

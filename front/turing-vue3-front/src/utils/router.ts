@@ -2,6 +2,8 @@
  * @descr 路由列表
  * @author Tony
  * */
+
+
 export const routerData = [
     {
         id: "1-1",
@@ -9,9 +11,40 @@ export const routerData = [
         name: "index",
         icon: "HomeFilled",
         meta: {
-            title: "首页",
+            title: "数据服务平台",
         },
         url: "/index",
+    },
+    {
+        path: "/work",
+        name: "work",
+        id: "1-2",
+        icon: "Flag",
+        meta: {
+            title: "个人中心",
+        },
+        children: [
+            {
+                path: "/work-platform",
+                name: "work-platform",
+                icon: "Avatar",
+                id: "1-2-1",
+                meta: {
+                    title: "工作台",
+                },
+                url: "work/platform",
+            },
+            {
+                path: "/work-dashboard",
+                name: "work-dashboard",
+                icon: "Avatar",
+                id: "1-2-2",
+                meta: {
+                    title: "仪表盘",
+                },
+                url: "work/dashboard",
+            }
+        ],
     },
     {
         path: "/user",
@@ -25,7 +58,7 @@ export const routerData = [
             {
                 path: "/user-info",
                 name: "user-info",
-                icon: "Avatar",
+                icon: "User",
                 id: "1-2-1",
                 meta: {
                     title: "用户中心",
@@ -35,7 +68,7 @@ export const routerData = [
             {
                 path: "/user-set",
                 name: "user-set",
-                icon: "Tools",
+                icon: "Edit",
                 id: "1-2-2",
                 meta: {
                     title: "用户设置",
@@ -51,12 +84,12 @@ export const routerData = [
         meta: {
             title: "系统管理",
         },
-        icon: "Monitor",
+        icon: "Tools",
         children: [
             {
                 path: "/system-info",
                 name: "system-info",
-                icon: "Tools",
+                icon: "Platform",
                 id: "2-3-1",
                 meta: {
                     title: "系统信息",
@@ -66,7 +99,7 @@ export const routerData = [
             {
                 path: "/system-set",
                 name: "system-set",
-                icon: "Tools",
+                icon: "Platform",
                 id: "2-3-2",
                 meta: {
                     title: "系统设置",
@@ -76,7 +109,7 @@ export const routerData = [
             {
                 path: "/system-menu",
                 name: "system-menu",
-                icon: "Tools",
+                icon: "Platform",
                 id: "2-3-3",
                 meta: {
                     title: "菜单管理",
@@ -113,7 +146,7 @@ export const routerData = [
         meta: {
             title: "数据平台",
         },
-        icon: "Monitor",
+        icon: "Eleme",
         children: [ // 子路由（一级嵌套）
             {
                 path: "/data-compute", // 子路由路径
@@ -218,7 +251,7 @@ export const routerData = [
         meta: {
             title: "算法平台",
         },
-        icon: "Monitor",
+        icon: "SwitchFilled",
         children: [
             {
                 path: "/algorithm-market",
@@ -260,7 +293,7 @@ export const routerData = [
         meta: {
             title: "作业调度",
         },
-        icon: "Monitor",
+        icon: "ChromeFilled",
         children: [
             {
                 path: "/schedule-job",
@@ -281,7 +314,7 @@ export const routerData = [
         meta: {
             title: "运维平台",
         },
-        icon: "Monitor",
+        icon: "Shop",
         children: [
             {
                 path: "/operation-monitor",
@@ -323,7 +356,7 @@ export const routerData = [
         meta: {
             title: "练习样例",
         },
-        icon: "Monitor",
+        icon: "WindPower",
         children: [
             {
                 path: "/example-example1",
